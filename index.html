@@ -47,6 +47,22 @@
 </head>
 <body>
 
+
+    <div class="preloader">
+        <div class="loader-content">
+            <div class="loader-wrapper">
+                <div class="loader-ring"></div>
+                  <span class="material-symbols-outlined loader-icon">medical_services</span>
+            </div>
+            <div class="loader-text" data-aos="fade-up">
+                Loading ...
+            </div>
+            <div class="progress-bar-wrap">
+                <div class="progress-line"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
 
@@ -776,16 +792,13 @@
             if (statsSection) observer.observe(statsSection);
             
             // Initialize Swiper
-            const heroSwiper = new Swiper('.heroSwiper', {
+            window.heroSwiper = new Swiper('.heroSwiper', {
                 loop: true,
                 effect: 'fade',
                 fadeEffect: {
                     crossFade: true
                 },
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
+                autoplay: false,
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,

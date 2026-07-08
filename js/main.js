@@ -53,3 +53,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, 500);
 });
+
+// Preloader Logic
+    // Preloader Logic
+window.addEventListener('load', function() {
+    const preloader = document.querySelector('.preloader');
+    
+    function startAnimations() {
+        // Init AOS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 800, easing: 'slide', once: true, offset: 50 });
+        }
+        // Start Swiper if initialized
+        if (window.heroSwiper && window.heroSwiper.autoplay) {
+            window.heroSwiper.autoplay.start();
+        }
+        // Start CSS animations
+        document.body.classList.add('play-animations');
+    }
+
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.remove();
+                startAnimations();
+            }, 600);
+        }, 2500); // Wait 2.5s for loading
+    } else {
+        startAnimations();
+    }
+});
