@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,18 +124,18 @@
         <!-- Category Navigation & Search -->
         <section class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-5 pb-4 border-bottom border-white border-opacity-10 gap-4" data-aos="fade-in">
             <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
-                <button class="btn btn-glow fw-bold rounded-pill px-4 transition-all border border-accent border-opacity-50">All Stories</button>
-                <button class="btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Field Stories</button>
-                <button class="btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Innovation</button>
-                <button class="btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Research</button>
-                <button class="btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Community</button>
+                <button onclick="filterByCategory('All Stories', this)" class="category-btn btn btn-glow fw-bold rounded-pill px-4 transition-all border border-accent border-opacity-50">All Stories</button>
+                <button onclick="filterByCategory('Field Stories', this)" class="category-btn btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Field Stories</button>
+                <button onclick="filterByCategory('Innovation', this)" class="category-btn btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Innovation</button>
+                <button onclick="filterByCategory('Research', this)" class="category-btn btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Research</button>
+                <button onclick="filterByCategory('Community', this)" class="category-btn btn btn-glass text-white-50 rounded-pill px-4 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">Community</button>
             </div>
             <div class="d-flex align-items-center gap-3 glass-card p-2 px-3 rounded-pill border border-white border-opacity-10 shadow-sm">
                 <span class="small text-white-50 fw-bold tracking-widest text-uppercase">Sort:</span>
-                <select class="form-select border-0 shadow-none text-white fw-bold bg-transparent cursor-pointer w-auto p-0 pe-4" style="cursor: pointer; appearance: none; background: url('data:image/svg+xml;utf8,<svg fill=%22%23fff%22 viewBox=%220 0 24 24%22 width=%2224%22 height=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/></svg>') no-repeat right center; padding-right: 2rem !important;">
-                    <option class="bg-modern-dark text-white">Latest Updates</option>
-                    <option class="bg-modern-dark text-white">Most Popular</option>
-                    <option class="bg-modern-dark text-white">Impact Score</option>
+                <select onchange="sortArticles()" class="form-select border-0 shadow-none text-white fw-bold bg-transparent cursor-pointer w-auto p-0 pe-4" style="cursor: pointer; appearance: none; background: url('data:image/svg+xml;utf8,<svg fill=%22%23fff%22 viewBox=%220 0 24 24%22 width=%2224%22 height=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/></svg>') no-repeat right center; padding-right: 2rem !important;">
+                    <option class="bg-modern-dark text-white" value="latest">Latest Updates</option>
+                    <option class="bg-modern-dark text-white" value="popular">Most Popular</option>
+                    <option class="bg-modern-dark text-white" value="impact">Impact Score</option>
                 </select>
             </div>
         </section>
@@ -483,6 +484,45 @@
         function filterByYear(year) {
             document.getElementById('searchInput').value = year;
             filterArticles();
+        }
+
+        function filterByCategory(category, btnElement) {
+            // Update button styles
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-glow', 'fw-bold', 'border-accent');
+                btn.classList.add('btn-glass', 'text-white-50', 'border-white', 'hover-border-accent');
+            });
+            
+            btnElement.classList.remove('btn-glass', 'text-white-50', 'border-white', 'hover-border-accent');
+            btnElement.classList.add('btn-glow', 'fw-bold', 'border-accent');
+            
+            // Filter articles
+            const articles = document.querySelectorAll('.col-md-6[data-aos]');
+            
+            articles.forEach(article => {
+                const articleContent = article.querySelector('article');
+                if (articleContent) {
+                    if (category === 'All Stories') {
+                        article.style.display = 'block';
+                    } else {
+                        const badge = articleContent.querySelector('.tracking-widest.text-uppercase');
+                        if (badge && badge.innerText.trim().toLowerCase() === category.toLowerCase()) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        }
+
+        function sortArticles() {
+            // Simple visual sort by reversing the DOM order for demonstration
+            const container = document.querySelector('.col-lg-8 > .row');
+            const articles = Array.from(container.querySelectorAll('.col-md-6[data-aos]'));
+            articles.reverse();
+            articles.forEach(article => container.appendChild(article));
         }
     </script>
 </body>
