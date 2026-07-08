@@ -18,6 +18,17 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <style>
+        .form-control:focus {
+            background-color: rgba(11, 17, 32, 0.9) !important;
+            color: #fff !important;
+            border-color: #06b6d4 !important;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3) !important;
+        }
+        .read-more-anim { transition: all 0.3s ease; border-radius: 4px; padding: 4px 8px; margin-left: -8px; z-index: 20; position: relative; }
+        .read-more-anim:hover { background: rgba(6, 182, 212, 0.15); box-shadow: 0 0 15px rgba(6, 182, 212, 0.4); transform: translateX(8px); color: #fff !important; }
+        .read-more-anim:hover span { transform: translateX(3px); }
+    </style>
+    <style>
         .line-clamp-3 {
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -32,7 +43,7 @@
     <div id="header-placeholder"></div>
 
     <!-- Hero Banner -->
-    <section class="position-relative overflow-hidden d-flex align-items-center justify-content-center border-bottom border-secondary border-opacity-25" style="min-height: 45vh; margin-top: -1px;">
+    <section class="position-relative overflow-hidden d-flex align-items-center justify-content-center border-bottom border-secondary border-opacity-25 pt-5" style="min-height: 45vh; margin-top: -1px;">
         <!-- Animated Tech Grid Background -->
         <div class="position-absolute inset-0 z-0 bg-modern-dark">
             <div class="position-absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none;"></div>
@@ -155,9 +166,9 @@
                                 <div class="small fw-bold text-white-50">
                                     <span>May 14, 2024</span><span class="mx-2 opacity-50">•</span><span>8 min read</span>
                                 </div>
-                                <span class="d-inline-flex align-items-center gap-1 text-accent fw-bold small transition-transform group-hover-transform-x">
+                                <a href="404.html" class="d-inline-flex align-items-center gap-1 text-accent fw-bold small text-decoration-none read-more-anim">
                                     Read More <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                                </span>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -183,9 +194,9 @@
                                 <div class="small fw-bold text-white-50">
                                     <span>May 10, 2024</span><span class="mx-2 opacity-50">•</span><span>5 min read</span>
                                 </div>
-                                <span class="d-inline-flex align-items-center gap-1 text-accent fw-bold small transition-transform group-hover-transform-x">
+                                <a href="404.html" class="d-inline-flex align-items-center gap-1 text-accent fw-bold small text-decoration-none read-more-anim">
                                     Read More <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                                </span>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -211,9 +222,9 @@
                                 <div class="small fw-bold text-white-50">
                                     <span>May 08, 2024</span><span class="mx-2 opacity-50">•</span><span>12 min read</span>
                                 </div>
-                                <span class="d-inline-flex align-items-center gap-1 text-accent fw-bold small transition-transform group-hover-transform-x">
+                                <a href="404.html" class="d-inline-flex align-items-center gap-1 text-accent fw-bold small text-decoration-none read-more-anim">
                                     Read More <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                                </span>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -239,9 +250,9 @@
                                 <div class="small fw-bold text-white-50">
                                     <span>May 05, 2024</span><span class="mx-2 opacity-50">•</span><span>15 min read</span>
                                 </div>
-                                <span class="d-inline-flex align-items-center gap-1 text-accent fw-bold small transition-transform group-hover-transform-x">
+                                <a href="404.html" class="d-inline-flex align-items-center gap-1 text-accent fw-bold small text-decoration-none read-more-anim">
                                     Read More <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                                </span>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -267,9 +278,9 @@
                                 <div class="small fw-bold text-white-50">
                                     <span>April 28, 2024</span><span class="mx-2 opacity-50">•</span><span>6 min read</span>
                                 </div>
-                                <span class="d-inline-flex align-items-center gap-1 text-accent fw-bold small transition-transform group-hover-transform-x">
+                                <a href="404.html" class="d-inline-flex align-items-center gap-1 text-accent fw-bold small text-decoration-none read-more-anim">
                                     Read More <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                                </span>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -295,9 +306,9 @@
                                 <div class="small fw-bold text-white-50">
                                     <span>April 22, 2024</span><span class="mx-2 opacity-50">•</span><span>10 min read</span>
                                 </div>
-                                <span class="d-inline-flex align-items-center gap-1 text-accent fw-bold small transition-transform group-hover-transform-x">
+                                <a href="404.html" class="d-inline-flex align-items-center gap-1 text-accent fw-bold small text-decoration-none read-more-anim">
                                     Read More <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                                </span>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -308,13 +319,13 @@
 
                 <!-- Pagination -->
                 <div class="d-flex justify-content-center align-items-center gap-4 mt-5 pt-4 border-top border-white border-opacity-10" data-aos="fade-in">
-                    <button class="btn btn-glass rounded-circle d-flex align-items-center justify-content-center text-white-50 hover-text-white transition-all p-0 border border-white border-opacity-25 hover-border-accent shadow-sm" style="width: 48px; height: 48px;">
+                    <button onclick="window.location.href='404.html'" class="btn btn-glass rounded-circle d-flex align-items-center justify-content-center text-white-50 hover-text-white transition-all p-0 border border-white border-opacity-25 hover-border-accent shadow-sm" style="width: 48px; height: 48px;">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </button>
                     <div class="glass-card px-4 py-2 rounded-pill border border-white border-opacity-10 shadow-sm d-flex align-items-center">
                         <span class="fw-bold small text-white-50 tracking-widest text-uppercase">Page <span class="text-white mx-1">1</span> of <span class="text-white mx-1">12</span></span>
                     </div>
-                    <button class="btn btn-glow rounded-circle d-flex align-items-center justify-content-center text-white p-0 shadow-lg border border-white border-opacity-25 hover-scale" style="width: 48px; height: 48px;">
+                    <button onclick="window.location.href='404.html'" class="btn btn-glow rounded-circle d-flex align-items-center justify-content-center text-white p-0 shadow-lg border border-white border-opacity-25 hover-scale" style="width: 48px; height: 48px;">
                         <span class="material-symbols-outlined">chevron_right</span>
                     </button>
                 </div>
@@ -330,18 +341,22 @@
                         <span class="material-symbols-outlined text-accent">search</span> Data Retrieval
                     </h4>
                     <div class="position-relative mb-4">
-                        <input class="form-control form-control-lg bg-modern-dark border border-white border-opacity-25 text-white shadow-none ps-3 pe-5 py-3 rounded-3 focus-within-border-accent transition-all" placeholder="Topics, dates, keywords..." type="text"/>
-                        <span class="material-symbols-outlined position-absolute top-50 end-0 translate-middle-y me-3 text-accent opacity-75">radar</span>
+                        <form onsubmit="event.preventDefault();" class="d-flex w-100">
+                            <input id="searchInput" class="form-control form-control-lg bg-modern-dark border border-white border-opacity-25 text-white shadow-none ps-3 pe-5 py-3 rounded-3 transition-all" placeholder="Topics, dates, keywords..." type="text" onkeyup="filterArticles()"/>
+                            <button type="button" class="btn p-0 position-absolute top-50 end-0 translate-middle-y me-3">
+                                <span class="material-symbols-outlined text-accent opacity-75">radar</span>
+                            </button>
+                        </form>
                     </div>
                     <div>
                         <p class="small fw-bold text-accent tracking-widest text-uppercase mb-3">Temporal Index</p>
                         <div class="row g-2">
-                            <div class="col-4"><button class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2024</button></div>
-                            <div class="col-4"><button class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2023</button></div>
-                            <div class="col-4"><button class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2022</button></div>
-                            <div class="col-4"><button class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2021</button></div>
-                            <div class="col-4"><button class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2020</button></div>
-                            <div class="col-4"><button class="btn btn-glow w-100 py-2 small rounded-2 text-white transition-all border border-accent border-opacity-50 hover-scale">More</button></div>
+                            <div class="col-4"><button onclick="filterByYear('2024')" class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2024</button></div>
+                            <div class="col-4"><button onclick="filterByYear('2023')" class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2023</button></div>
+                            <div class="col-4"><button onclick="filterByYear('2022')" class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2022</button></div>
+                            <div class="col-4"><button onclick="filterByYear('2021')" class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2021</button></div>
+                            <div class="col-4"><button onclick="filterByYear('2020')" class="btn btn-glass w-100 py-2 small rounded-2 text-white-50 hover-text-white transition-all border border-white border-opacity-10 hover-border-accent">2020</button></div>
+                            <div class="col-4"><button onclick="filterByYear('')" class="btn btn-glow w-100 py-2 small rounded-2 text-white transition-all border border-accent border-opacity-50 hover-scale">All</button></div>
                         </div>
                     </div>
                 </div>
@@ -447,5 +462,28 @@
     <!-- Custom JS -->
     <script src="js/main.js"></script>
     
+    <script>
+        function filterArticles() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const articles = document.querySelectorAll('.col-md-6[data-aos]');
+            
+            articles.forEach(article => {
+                // Ignore the sidebar if it matched
+                if (article.querySelector('article')) {
+                    const textContent = article.innerText.toLowerCase();
+                    if (textContent.includes(input)) {
+                        article.style.display = 'block';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        function filterByYear(year) {
+            document.getElementById('searchInput').value = year;
+            filterArticles();
+        }
+    </script>
 </body>
 </html>

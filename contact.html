@@ -175,31 +175,7 @@
     <script src="js/main.js"></script>
     
     <script>
-        // Form submission simulation
-        const form = document.getElementById('contactForm');
-        if(form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const btn = document.getElementById('submitBtn');
-                const originalText = btn.innerText;
-                btn.innerText = 'SENDING...';
-                btn.classList.add('opacity-50');
-                btn.style.pointerEvents = 'none';
-                
-                setTimeout(() => {
-                    btn.innerText = 'MESSAGE SENT';
-                    btn.classList.remove('btn-glow');
-                    btn.classList.add('btn-success');
-                    setTimeout(() => {
-                        btn.innerText = originalText;
-                        btn.classList.remove('opacity-50', 'btn-success');
-                        btn.classList.add('btn-glow');
-                        btn.style.pointerEvents = 'auto';
-                        form.reset();
-                    }, 3000);
-                }, 1500);
-            });
-        }
+        // Form naturally submits to 404.html
     </script>
 </body>
 </html>
