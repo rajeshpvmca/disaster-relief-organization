@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Resource Center | Stackly</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Geist:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .asymmetric-mask {
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 5% 95%);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="position-relative overflow-hidden d-flex align-items-center justify-content-center pt-5" style="min-height: 45vh; margin-top: -1px;">
+            <!-- Background Image with slowZoom -->
+            <div class="position-absolute inset-0" style="animation: slowZoom 20s ease-in-out infinite alternate;">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2000" class="w-100 h-100 object-fit-cover" alt="Resources Background" style="filter: brightness(0.5);">
+            </div>
+            
+            <!-- Ambient Glow -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 100%); z-index: 0;"></div>
+            <div class="position-absolute rounded-circle bg-accent opacity-25 pulse-ring" style="top: 20%; left: 10%; width: 30rem; height: 30rem; filter: blur(8rem); z-index: 0;"></div>
+            <div class="position-absolute rounded-circle bg-info opacity-25 pulse-ring" style="bottom: -10%; right: 10%; width: 25rem; height: 25rem; filter: blur(6rem); z-index: 0;"></div>
+            
+            <!-- Glass Overlay -->
+            <div class="position-absolute inset-0 bg-modern-dark bg-opacity-50 z-0"></div>
+            
+            <div class="container position-relative z-1 py-5 mt-5 text-center">
+                <span class="d-inline-block py-1 px-3 glass-card rounded-pill small fw-bold text-accent tracking-widest mb-3 border border-accent border-opacity-50" data-aos="fade-down">RESOURCE CENTER</span>
+                <h1 class="display-3 fw-bold text-white mb-3" data-aos="fade-up" data-aos-delay="100">
+                    Knowledge is the First Line of <br class="d-none d-md-block"/>
+                    <span class="text-gradient">Defense.</span>
+                </h1>
+                <p class="fs-4 text-white-50 mx-auto mb-5" style="max-width: 800px;" data-aos="fade-up" data-aos-delay="200">
+                    Access our comprehensive library of preparedness guides, technical research, and recovery tools designed for individuals, communities, and global partners.
+                </p>
+                
+            </div>
+        </section>
+
+        <!-- Emergency Checklists -->
+        <section class="py-5 bg-modern-dark border-top border-bottom border-secondary border-opacity-25" data-aos="fade-up">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-5">
+                    <div>
+                        <h2 class="display-6 fw-bold text-white mb-2">Emergency Checklists</h2>
+                        <p class="text-white-50 m-0">Essential one-pagers for rapid response.</p>
+                    </div>
+                    <button class="btn btn-link text-accent fw-bold text-decoration-none d-flex align-items-center gap-1 p-0 hover-text-white transition-all">
+                        View All <span class="material-symbols-outlined fs-5">arrow_forward</span>
+                    </button>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-4 rounded-4 shadow-lg border border-danger border-opacity-25 transition-transform h-100 d-flex flex-column hover-glow hover-scale position-relative overflow-hidden group" style="box-shadow: inset 0 0 20px rgba(220, 53, 69, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(220, 53, 69, 0.15), transparent 60%);"></div>
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <div class="position-relative mb-4" style="width: 48px; height: 48px;">
+                                    <div class="position-absolute inset-0 rounded-circle bg-danger opacity-25 pulse-ring"></div>
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center w-100 h-100 bg-danger bg-opacity-10 border border-danger border-opacity-50 position-relative z-1">
+                                        <span class="material-symbols-outlined text-danger" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                    </div>
+                                </div>
+                                <h3 class="fs-5 fw-bold text-white mb-2 transition-colors hover-text-danger">Wildfire Protocol</h3>
+                                <p class="small text-white-50 mb-4 flex-grow-1">Evacuation routes, air filtration basics, and grab-bag essentials.</p>
+                                <button class="btn btn-outline-danger w-100 fw-bold transition-all text-white hover-glow" style="border-color: rgba(220, 53, 69, 0.5);">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="glass-card p-4 rounded-4 shadow-lg border border-success border-opacity-25 transition-transform h-100 d-flex flex-column hover-glow hover-scale position-relative overflow-hidden group" style="box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 60%);"></div>
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <div class="position-relative mb-4" style="width: 48px; height: 48px;">
+                                    <div class="position-absolute inset-0 rounded-circle bg-success opacity-25 pulse-ring"></div>
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center w-100 h-100 bg-success bg-opacity-10 border border-success border-opacity-50 position-relative z-1">
+                                        <span class="material-symbols-outlined text-success" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+                                    </div>
+                                </div>
+                                <h3 class="fs-5 fw-bold text-white mb-2 transition-colors hover-text-success">Flood Safety</h3>
+                                <p class="small text-white-50 mb-4 flex-grow-1">Securing valuables, water purification, and post-flood sanitation.</p>
+                                <button class="btn btn-outline-success w-100 fw-bold transition-all text-white hover-glow" style="border-color: rgba(16, 185, 129, 0.5);">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="glass-card p-4 rounded-4 shadow-lg border border-primary border-opacity-25 transition-transform h-100 d-flex flex-column hover-glow hover-scale position-relative overflow-hidden group" style="box-shadow: inset 0 0 20px rgba(13, 110, 253, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.15), transparent 60%);"></div>
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <div class="position-relative mb-4" style="width: 48px; height: 48px;">
+                                    <div class="position-absolute inset-0 rounded-circle bg-primary opacity-25 pulse-ring"></div>
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center w-100 h-100 bg-primary bg-opacity-10 border border-primary border-opacity-50 position-relative z-1">
+                                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">tsunami</span>
+                                    </div>
+                                </div>
+                                <h3 class="fs-5 fw-bold text-white mb-2 transition-colors hover-text-primary">Earthquake Prep</h3>
+                                <p class="small text-white-50 mb-4 flex-grow-1">Drop, cover, and hold techniques for households and offices.</p>
+                                <button class="btn btn-outline-primary w-100 fw-bold transition-all text-white hover-glow" style="border-color: rgba(13, 110, 253, 0.5);">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="glass-card p-4 rounded-4 shadow-lg border border-info border-opacity-25 transition-transform h-100 d-flex flex-column hover-glow hover-scale position-relative overflow-hidden group" style="box-shadow: inset 0 0 20px rgba(13, 202, 240, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(13, 202, 240, 0.15), transparent 60%);"></div>
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <div class="position-relative mb-4" style="width: 48px; height: 48px;">
+                                    <div class="position-absolute inset-0 rounded-circle bg-info opacity-25 pulse-ring"></div>
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center w-100 h-100 bg-info bg-opacity-10 border border-info border-opacity-50 position-relative z-1">
+                                        <span class="material-symbols-outlined text-info" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                                    </div>
+                                </div>
+                                <h3 class="fs-5 fw-bold text-white mb-2 transition-colors hover-text-info">Basic First Aid</h3>
+                                <p class="small text-white-50 mb-4 flex-grow-1">Crisis wound care and essential kit component list.</p>
+                                <button class="btn btn-outline-info w-100 fw-bold transition-all text-white hover-glow" style="border-color: rgba(13, 202, 240, 0.5);">Download PDF</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tactical Field Applications -->
+        <section class="py-5" data-aos="fade-in">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-5">
+                    <div>
+                        <span class="small fw-bold text-uppercase tracking-widest text-accent mb-2 d-inline-block">Software Downloads</span>
+                        <h2 class="display-6 fw-bold text-white border-start border-4 border-success ps-4 shadow-sm" style="box-shadow: -10px 0 20px rgba(16, 185, 129, 0.2);">Tactical Field Applications</h2>
+                    </div>
+                    <a href="#" class="btn btn-outline-success rounded-pill mt-3 mt-md-0 fw-bold hover-glow">View Full Catalog <span class="material-symbols-outlined fs-6 align-middle">chevron_right</span></a>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- App 1 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="d-flex flex-column h-100 group glass-card p-4 rounded-4 hover-scale hover-glow position-relative overflow-hidden border border-success border-opacity-25" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(15, 23, 42, 0.8));">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 50%);"></div>
+                            
+                            <div class="position-relative z-1 mb-4 d-flex align-items-center gap-3">
+                                <div class="position-relative" style="width: 60px; height: 60px;">
+                                    <div class="position-absolute inset-0 rounded-4 bg-success opacity-25 pulse-ring"></div>
+                                    <div class="w-100 h-100 bg-modern-dark border border-success border-opacity-50 rounded-4 d-flex align-items-center justify-content-center shadow-lg position-relative z-1">
+                                        <span class="material-symbols-outlined text-success fs-2">cell_tower</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="fs-5 fw-bold text-white m-0 group-hover-text-success transition-colors">Stackly CommGrid</h4>
+                                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">v3.2.1 • Android/iOS</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-white-50 small mb-4 flex-grow-1 position-relative z-1">Mesh-network communication app that operates independently of local cell towers. Features encrypted SMS, GPS pinging, and automated rally-point coordination.</p>
+                            
+                            <button class="btn btn-glow w-100 fw-bold text-white rounded-pill py-2 d-flex align-items-center justify-content-center gap-2 border border-success border-opacity-25 transition-all" style="background: rgba(16, 185, 129, 0.1);">
+                                <span class="material-symbols-outlined fs-5">install_mobile</span> Install App
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- App 2 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex flex-column h-100 group glass-card p-4 rounded-4 hover-scale hover-glow position-relative overflow-hidden border border-info border-opacity-25" style="background: linear-gradient(135deg, rgba(13, 202, 240, 0.05), rgba(15, 23, 42, 0.8));">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(13, 202, 240, 0.15), transparent 50%);"></div>
+                            
+                            <div class="position-relative z-1 mb-4 d-flex align-items-center gap-3">
+                                <div class="position-relative" style="width: 60px; height: 60px;">
+                                    <div class="position-absolute inset-0 rounded-4 bg-info opacity-25 pulse-ring"></div>
+                                    <div class="w-100 h-100 bg-modern-dark border border-info border-opacity-50 rounded-4 d-flex align-items-center justify-content-center shadow-lg position-relative z-1">
+                                        <span class="material-symbols-outlined text-info fs-2">flight_takeoff</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="fs-5 fw-bold text-white m-0 group-hover-text-info transition-colors">Drone Surveyor</h4>
+                                    <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25">v1.4.0 • Windows/Mac</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-white-50 small mb-4 flex-grow-1 position-relative z-1">Automated flight path generation for search and rescue operations. Rapidly stitch aerial photos into actionable 3D terrain maps with AI-assisted anomaly detection.</p>
+                            
+                            <button class="btn btn-glow w-100 fw-bold text-white rounded-pill py-2 d-flex align-items-center justify-content-center gap-2 border border-info border-opacity-25 transition-all" style="background: rgba(13, 202, 240, 0.1);">
+                                <span class="material-symbols-outlined fs-5">desktop_windows</span> Download .DMG
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- App 3 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="d-flex flex-column h-100 group glass-card p-4 rounded-4 hover-scale hover-glow position-relative overflow-hidden border border-warning border-opacity-25" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), rgba(15, 23, 42, 0.8));">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.15), transparent 50%);"></div>
+                            
+                            <div class="position-relative z-1 mb-4 d-flex align-items-center gap-3">
+                                <div class="position-relative" style="width: 60px; height: 60px;">
+                                    <div class="position-absolute inset-0 rounded-4 bg-warning opacity-25 pulse-ring"></div>
+                                    <div class="w-100 h-100 bg-modern-dark border border-warning border-opacity-50 rounded-4 d-flex align-items-center justify-content-center shadow-lg position-relative z-1">
+                                        <span class="material-symbols-outlined text-warning fs-2">database</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="fs-5 fw-bold text-white m-0 group-hover-text-warning transition-colors">Shelter Connect</h4>
+                                    <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Web Portal / API</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-white-50 small mb-4 flex-grow-1 position-relative z-1">Real-time resource allocation and bed-tracking dashboard for temporary shelters. Integrates directly with national logistics databases and private supply chains.</p>
+                            
+                            <button class="btn btn-glow w-100 fw-bold text-white rounded-pill py-2 d-flex align-items-center justify-content-center gap-2 border border-warning border-opacity-25 transition-all" style="background: rgba(245, 158, 11, 0.1);">
+                                <span class="material-symbols-outlined fs-5">api</span> Access Portal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policy Briefs & Latest Research -->
+        <section class="py-5 bg-modern-dark text-white border-top border-bottom border-secondary border-opacity-25 position-relative overflow-hidden" data-aos="fade-up">
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.05), transparent 70%); z-index: 0;"></div>
+            
+            <div class="container position-relative z-1">
+                <div class="mb-5">
+                    <span class="small fw-bold text-uppercase tracking-widest text-accent">Expert Analysis</span>
+                    <h2 class="display-6 fw-bold mt-2">Policy Briefs & Global Trends</h2>
+                </div>
+                
+                <div class="row g-4" style="min-height: 600px;">
+                    <!-- Featured Research -->
+                    <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="h-100 rounded-4 p-4 p-md-5 d-flex flex-column justify-content-between glass-card hover-glow hover-scale position-relative overflow-hidden group border border-success border-opacity-25" style="box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.1);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.15), transparent 70%);"></div>
+                            
+                            <div class="position-relative z-1">
+                                <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 rounded-pill mb-4 px-3 py-2 fw-bold d-inline-flex align-items-center gap-2">
+                                    <span class="rounded-circle bg-success pulse-ring" style="width: 8px; height: 8px;"></span> FEATURED STUDY
+                                </span>
+                                <h3 class="display-6 fw-bold mb-4 text-white group-hover-text-success transition-colors">2024 Climate Resilience Report: Sub-Saharan Logistical Adaptation</h3>
+                                <p class="fs-5 text-white-50 mb-0">An in-depth analysis of supply chain vulnerabilities in the wake of intensifying seasonal floods and the efficacy of drone-led medical delivery systems.</p>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center gap-3 mt-4 pt-3 position-relative z-1">
+                                <div class="d-flex" style="margin-left: 10px;">
+                                    <div class="rounded-circle bg-modern-dark text-white d-flex align-items-center justify-content-center border border-2 border-white border-opacity-25 shadow-sm" style="width: 40px; height: 40px; margin-left: -10px; font-size: 0.8rem;">Dr. A</div>
+                                    <div class="rounded-circle text-dark fw-bold d-flex align-items-center justify-content-center border border-2 border-white border-opacity-25 bg-accent-gradient shadow-sm" style="width: 40px; height: 40px; margin-left: -10px; font-size: 0.8rem;">RE</div>
+                                </div>
+                                <span class="small text-white-50 fw-bold">Published by Stackly Research Dept.</span>
+                                <button class="btn btn-outline-success text-white fw-bold text-decoration-none ms-auto d-flex align-items-center gap-2 hover-glow transition-all rounded-pill px-4">
+                                    Read Full Report <span class="material-symbols-outlined fs-6">open_in_new</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 d-flex flex-column gap-4">
+                        <!-- Policy 1 -->
+                        <div class="flex-grow-1 rounded-4 p-4 d-flex flex-column glass-card hover-glow hover-scale transition-all border-start border-4 border-info position-relative overflow-hidden group" style="box-shadow: inset 0 0 20px rgba(13, 202, 240, 0.05);" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(13, 202, 240, 0.1), transparent 60%);"></div>
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <span class="material-symbols-outlined mb-4 text-info group-hover-scale transition-transform" style="font-size: 2.5rem;">account_balance</span>
+                                <h4 class="fs-4 fw-bold text-white mb-3 group-hover-text-info transition-colors">NGO Cooperation Frameworks</h4>
+                                <p class="text-white-50 small mb-4 flex-grow-1">Legal guidelines for rapid cross-border equipment transit during Tier 3 disasters.</p>
+                                <a class="text-decoration-none small fw-bold text-info hover-text-white transition-all" href="#">Download PDF (2.4MB)</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Policy 2 -->
+                        <div class="flex-grow-1 rounded-4 p-4 d-flex flex-column glass-card hover-glow hover-scale transition-all border-start border-4 border-warning position-relative overflow-hidden group" style="box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.05);" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.1), transparent 60%);"></div>
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <span class="material-symbols-outlined mb-4 text-warning group-hover-scale transition-transform" style="font-size: 2.5rem;">security</span>
+                                <h4 class="fs-4 fw-bold text-white mb-3 group-hover-text-warning transition-colors">Data Privacy in Crisis</h4>
+                                <p class="text-white-50 small mb-4 flex-grow-1">Maintaining beneficiary dignity and security in biometric distribution systems.</p>
+                                <a class="text-decoration-none small fw-bold text-warning hover-text-white transition-all" href="#">Download PDF (1.1MB)</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Policy 3 (Partner Portal) -->
+                    <div class="col-12" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="rounded-4 p-4 p-md-5 d-flex flex-column flex-md-row align-items-md-center justify-content-between position-relative overflow-hidden group bg-modern-dark border border-success border-opacity-50 shadow-lg hover-scale hover-glow">
+                            <div class="position-absolute inset-0 opacity-25" style="background: repeating-linear-gradient(45deg, rgba(16, 185, 129, 0.1) 0px, rgba(16, 185, 129, 0.1) 2px, transparent 2px, transparent 8px);"></div>
+                            <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 bg-success opacity-10 pulse-ring" style="filter: blur(50px);"></div>
+                            
+                            <div class="position-relative z-1 mb-4 mb-md-0">
+                                <div class="d-flex align-items-center gap-3 mb-2">
+                                    <span class="material-symbols-outlined text-success" style="font-size: 2.5rem;">shield_lock</span>
+                                    <h4 class="display-6 fw-bold text-white m-0">Partner Portal</h4>
+                                </div>
+                                <p class="fs-5 text-white m-0 opacity-75" style="max-width: 500px;">Secure access to the full archive of technical white papers and NGO collaborative tools.</p>
+                            </div>
+                            <div class="position-relative z-1">
+                                <button class="btn btn-glow fw-bold px-5 py-3 rounded-pill shadow-lg d-flex align-items-center gap-2 text-white border border-success border-opacity-50">
+                                    <span class="material-symbols-outlined">login</span> Request Access
+                                </button>
+                            </div>
+                            <span class="material-symbols-outlined position-absolute text-success opacity-10 transition-transform group-hover-scale" style="font-size: 250px; right: -50px; bottom: -80px; transform: rotate(15deg);">folder_shared</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kids' Safety Corner -->
+        <section class="py-5 position-relative overflow-hidden" data-aos="fade-up">
+            <div class="position-absolute top-50 start-0 translate-middle-y w-100 h-100" style="background: radial-gradient(ellipse at left, rgba(16, 185, 129, 0.05), transparent 70%); z-index: 0;"></div>
+            <div class="container position-relative z-1">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-6 order-2 order-md-1" data-aos="fade-right">
+                        <div class="position-relative p-4">
+                            <div class="position-absolute rounded-5 bg-accent opacity-25 pulse-ring" style="inset: 0; filter: blur(30px); z-index: 0;"></div>
+                            <div class="position-relative glass-card p-2 rounded-4 shadow-lg hover-scale z-1 border border-accent border-opacity-25" style="transform: rotate(1deg);">
+                                <img class="w-100 rounded-3" alt="Kids safety" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2qcTxs-_DTTvemiNRdDv8aTBMN8oZ9EayHieMW1K_UQ6UwLGA3DG6e_NgwNm-KJrBnOuC2qyQWKOvXPNwuw-ZQSm4X-g6FU5vfBH1BYOKWzPbUK3_vDunmBO4A-MPHyQw14k3D1GnAwcI0_lh_0OTgjPuXVR_QVD-_A9qTtHfSiAHs34uyFMEiY-jXEwhTh45dEWCy4uHw9wYH9DywZcTVYn7_rAD4FvPLUrF2r1zN3OCEdltHuEKXWp7FglrTBgP3op8bXuEW5Qf"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2" data-aos="fade-left">
+                        <span class="badge rounded-pill mb-4 px-3 py-2 fw-bold bg-modern-dark border border-accent border-opacity-50 text-accent tracking-widest hover-scale d-inline-block shadow-sm">FOR YOUNG EXPLORERS</span>
+                        <h2 class="display-5 fw-bold text-white mb-4">Safety Heroes Corner</h2>
+                        <p class="fs-5 text-white-50 mb-5">Disaster preparedness shouldn't be scary. Our interactive games, coloring books, and simple stories help kids understand safety through play.</p>
+                        
+                        <div class="row g-3 mb-5">
+                            <div class="col-sm-6">
+                                <div class="glass-card p-3 rounded-4 shadow-lg d-flex align-items-center gap-3 hover-glow hover-scale transition-all border border-success border-opacity-25" style="cursor: pointer; box-shadow: inset 0 0 15px rgba(16, 185, 129, 0.05);">
+                                    <span class="fs-2">🎨</span>
+                                    <div>
+                                        <h5 class="fw-bold fs-6 m-0 text-white">Coloring Kit</h5>
+                                        <p class="small text-white-50 m-0">Download & Print</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="glass-card p-3 rounded-4 shadow-lg d-flex align-items-center gap-3 hover-glow hover-scale transition-all border border-info border-opacity-25" style="cursor: pointer; box-shadow: inset 0 0 15px rgba(13, 202, 240, 0.05);">
+                                    <span class="fs-2">🎮</span>
+                                    <div>
+                                        <h5 class="fw-bold fs-6 m-0 text-white">Safety Quest Game</h5>
+                                        <p class="small text-white-50 m-0">Online Interactive</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-glow px-5 py-3 fw-bold rounded-pill transition-colors text-white hover-scale">Visit Kids' Hub</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Toolkit & Training Portal CTA -->
+        <section class="py-5 bg-modern-dark border-top border-secondary border-opacity-25 position-relative overflow-hidden" data-aos="fade-in">
+            <div class="container position-relative z-1">
+                <div class="row g-5">
+                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="glass-card p-4 p-md-5 rounded-4 shadow-lg h-100 hover-scale hover-glow position-relative overflow-hidden group border border-accent border-opacity-50" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(15, 23, 42, 0.8) 100%);">
+                            <!-- Background Elements -->
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 60%);"></div>
+                            <span class="material-symbols-outlined position-absolute text-success transition-transform group-hover-scale" style="opacity: 0.1; font-size: 300px; right: -50px; top: -50px; pointer-events: none; transform: rotate(15deg);">folder_special</span>
+                            
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <div>
+                                    <div class="d-inline-flex align-items-center justify-content-center bg-success bg-opacity-10 border border-success border-opacity-25 rounded-circle mb-4 position-relative" style="width: 64px; height: 64px;">
+                                        <div class="position-absolute inset-0 rounded-circle bg-success opacity-25 pulse-ring"></div>
+                                        <span class="material-symbols-outlined text-success fs-2 position-relative z-1">build_circle</span>
+                                    </div>
+                                    <h3 class="display-6 fw-bold text-white mb-3 group-hover-text-success transition-colors">Community Toolkit</h3>
+                                    <p class="text-white mb-5 opacity-75 fs-5">Everything local leaders need to rapidly organize neighborhood response teams.</p>
+                                </div>
+                                
+                                <div class="d-flex flex-column gap-3 mb-5 mt-auto">
+                                    <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-modern-dark border border-white border-opacity-10 shadow-sm transition-all hover-glow">
+                                        <div class="rounded-circle bg-success bg-opacity-20 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                            <span class="material-symbols-outlined text-accent fs-6">map</span>
+                                        </div>
+                                        <p class="m-0 text-white fw-bold opacity-75">Asset Mapping Sheets</p>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-modern-dark border border-white border-opacity-10 shadow-sm transition-all hover-glow">
+                                        <div class="rounded-circle bg-success bg-opacity-20 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                            <span class="material-symbols-outlined text-accent fs-6">rule</span>
+                                        </div>
+                                        <p class="m-0 text-white fw-bold opacity-75">SOPs for Shelters</p>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-modern-dark border border-white border-opacity-10 shadow-sm transition-all hover-glow">
+                                        <div class="rounded-circle bg-success bg-opacity-20 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                            <span class="material-symbols-outlined text-accent fs-6">campaign</span>
+                                        </div>
+                                        <p class="m-0 text-white fw-bold opacity-75">Digital Branding Kit</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-glow w-100 text-white fw-bold text-decoration-none rounded-pill py-3 d-inline-flex align-items-center justify-content-center gap-2 hover-scale transition-all border border-success border-opacity-50" style="background-color: rgba(16, 185, 129, 0.15);">
+                                    <span class="material-symbols-outlined fs-5">cloud_download</span> Download Toolkit (.ZIP)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="h-100 rounded-4 p-4 p-md-5 position-relative overflow-hidden glass-card hover-scale hover-glow group border border-info border-opacity-50 shadow-lg" style="background: linear-gradient(135deg, rgba(13, 202, 240, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);">
+                            <!-- Background Elements -->
+                            <div class="position-absolute inset-0 opacity-25" style="background-image: radial-gradient(circle at 2px 2px, rgba(13, 202, 240, 0.3) 1px, transparent 0); background-size: 32px 32px; pointer-events: none;"></div>
+                            <div class="position-absolute top-0 end-0 w-100 h-100 bg-info pulse-ring" style="opacity: 0.1; filter: blur(80px); z-index: 0;"></div>
+                            <span class="material-symbols-outlined position-absolute text-info transition-transform group-hover-scale" style="opacity: 0.1; font-size: 250px; right: -20px; bottom: -20px; pointer-events: none; transform: rotate(-10deg);">school</span>
+                            
+                            <div class="position-relative z-1 d-flex flex-column h-100">
+                                <div>
+                                    <span class="small fw-bold tracking-widest text-uppercase mb-4 d-inline-flex align-items-center gap-2 text-info border border-info border-opacity-50 rounded-pill px-3 py-1 bg-info bg-opacity-10 shadow-sm transition-all hover-glow">
+                                        <span class="rounded-circle bg-info pulse-ring" style="width: 8px; height: 8px;"></span> PRO MODULES
+                                    </span>
+                                    <h3 class="display-6 fw-bold text-white mb-3 group-hover-text-info transition-colors">Training Portal</h3>
+                                    <p class="text-white-50 mb-4 fs-5">Go beyond the basics with certified training. From Advanced Triage to Logistical Management.</p>
+                                </div>
+                                
+                                <!-- Fake UI Element inside the card -->
+                                <div class="glass-card rounded-4 p-3 mb-5 border border-white border-opacity-10 bg-modern-dark shadow-lg">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-white small fw-bold d-flex align-items-center gap-2"><span class="material-symbols-outlined fs-6 text-info">play_lesson</span> Current Course</span>
+                                        <span class="badge bg-info text-dark rounded-pill">75% Complete</span>
+                                    </div>
+                                    <div class="progress bg-dark mb-2" style="height: 6px;">
+                                        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="small text-white-50 m-0">Urban Search & Rescue (Module 3)</p>
+                                </div>
+                                
+                                <div class="mt-auto d-flex flex-column flex-sm-row gap-3">
+                                    <button class="btn btn-glow fw-bold px-4 py-3 rounded-pill shadow-lg text-white border border-info border-opacity-50 flex-grow-1" style="background-color: rgba(13, 202, 240, 0.2);">Enroll Now</button>
+                                    <button class="btn btn-outline-info fw-bold px-4 py-3 rounded-pill text-white flex-grow-1">Curriculum</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Documents</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background-color: transparent; padding: 1.5rem; color: var(--text-primary); }
+        .content-card {
+            background: rgba(11, 17, 32, 0.6); backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .doc-item {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 1.5rem; transition: all 0.3s;
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;
+        }
+        .doc-item:hover { background: rgba(255,255,255,0.05); border-color: rgba(139, 92, 246, 0.5); }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined" style="color: #8b5cf6; font-size: 2rem;">receipt_long</span>
+                    Tax Documents Vault
+                </h2>
+                <p class="text-white-50 mb-0 font-monospace small">SECURITY: <span style="color: #8b5cf6;">ENCRYPTED</span></p>
+            </div>
+            <button class="btn btn-outline-light rounded-3 px-4 py-2 d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined">mail</span> Email All to CPA
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-8 mx-auto">
+                <div class="content-card">
+                    <h5 class="fw-bold mb-4 border-bottom border-secondary pb-3">Annual 501(c)(3) Receipts</h5>
+                    
+                    <div class="doc-item">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="material-symbols-outlined fs-2 text-danger">picture_as_pdf</span>
+                            <div>
+                                <h6 class="text-white mb-0">2023 Annual Tax Statement</h6>
+                                <span class="text-white-50 small font-monospace">Generated: Jan 15, 2024</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-glass text-white"><span class="material-symbols-outlined">download</span></button>
+                    </div>
+
+                    <div class="doc-item">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="material-symbols-outlined fs-2 text-danger">picture_as_pdf</span>
+                            <div>
+                                <h6 class="text-white mb-0">2022 Annual Tax Statement</h6>
+                                <span class="text-white-50 small font-monospace">Generated: Jan 12, 2023</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-glass text-white"><span class="material-symbols-outlined">download</span></button>
+                    </div>
+
+                    <div class="doc-item">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="material-symbols-outlined fs-2 text-danger">picture_as_pdf</span>
+                            <div>
+                                <h6 class="text-white mb-0">2021 Annual Tax Statement</h6>
+                                <span class="text-white-50 small font-monospace">Generated: Jan 10, 2022</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-glass text-white"><span class="material-symbols-outlined">download</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mock link handler for danger zone buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.top.location.href = '../404.html';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

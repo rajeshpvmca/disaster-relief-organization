@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background-color: transparent; padding: 1.5rem; color: var(--text-primary); }
+        .content-card {
+            background: rgba(11, 17, 32, 0.6); backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .metric-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 1.5rem; text-align: center; }
+        .metric-val { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined text-danger" style="font-size: 2rem;">gpp_bad</span>
+                    Threat Management
+                </h2>
+                <p class="text-white-50 mb-0 font-monospace small">FIREWALL_STATUS: <span class="text-success">ACTIVE & SECURE</span></p>
+            </div>
+            <button class="btn btn-danger rounded-3 px-4 py-2 d-flex align-items-center gap-2" style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #ef4444;">
+                <span class="material-symbols-outlined">shield</span> Lockdown System
+            </button>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-6 col-md-3">
+                <div class="metric-card">
+                    <div class="metric-val text-success">0</div>
+                    <div class="text-white-50 small text-uppercase tracking-widest mt-2">Active Breaches</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="metric-card">
+                    <div class="metric-val text-warning">14</div>
+                    <div class="text-white-50 small text-uppercase tracking-widest mt-2">Blocked IPs (24h)</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="metric-card">
+                    <div class="metric-val text-info">99.9%</div>
+                    <div class="text-white-50 small text-uppercase tracking-widest mt-2">Uptime</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="metric-card">
+                    <div class="metric-val text-accent">AES-256</div>
+                    <div class="text-white-50 small text-uppercase tracking-widest mt-2">Encryption</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h5 class="fw-bold mb-4 border-bottom border-secondary pb-3 text-white">Recent Security Events</h5>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover mb-0" style="background: transparent;">
+                    <thead>
+                        <tr>
+                            <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Timestamp</th>
+                            <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Event Type</th>
+                            <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Source IP</th>
+                            <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Resolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border-white border-opacity-10 font-monospace text-white-50">Today 12:12:45</td>
+                            <td class="border-white border-opacity-10"><span class="badge bg-danger bg-opacity-25 text-danger border border-danger border-opacity-25">Unauthorized Access</span></td>
+                            <td class="border-white border-opacity-10 font-monospace">45.22.109.11</td>
+                            <td class="border-white border-opacity-10 text-success">Auto-Blocked</td>
+                        </tr>
+                        <tr>
+                            <td class="border-white border-opacity-10 border-0 font-monospace text-white-50">Yesterday 04:30:11</td>
+                            <td class="border-white border-opacity-10 border-0"><span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25">Failed Login Burst</span></td>
+                            <td class="border-white border-opacity-10 border-0 font-monospace">188.4.3.99</td>
+                            <td class="border-white border-opacity-10 border-0 text-success">Rate Limited</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mock link handler for danger zone buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.top.location.href = '../404.html';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

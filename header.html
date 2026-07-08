@@ -1,0 +1,84 @@
+<!-- Custom Header Styles -->
+<style>
+    /* Unique Nav Link Hover Effect */
+    .glass-nav .nav-link {
+        position: relative;
+        padding-bottom: 5px;
+        font-weight: 500;
+    }
+    
+    .glass-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: var(--accent-emerald);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px var(--accent-emerald);
+    }
+    
+    .glass-nav .nav-link:hover {
+        color: #ffffff !important;
+    }
+    
+    .glass-nav .nav-link:hover::after,
+    .glass-nav .nav-link.active::after {
+        width: 100%;
+    }
+
+    /* Login Button Hover Rotation */
+    .btn-login-nav {
+        transition: all 0.3s ease;
+    }
+    
+    .btn-login-nav .login-icon {
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .btn-login-nav:hover .login-icon {
+        transform: rotate(360deg) scale(1.2);
+    }
+</style>
+
+<!-- TopNavBar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-3 glass-nav border-accent border-opacity-10" style="background: rgba(11, 17, 32, 0.85); backdrop-filter: blur(24px);">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+                <div style="-webkit-mask: url('assets/images/logoStackly.webp') no-repeat center left; -webkit-mask-size: contain; mask: url('assets/images/logoStackly.webp') no-repeat center left; mask-size: contain; background-color: var(--accent-emerald); width: 160px; height: 50px;"
+                    aria-label="Stackly Logo"></div>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mx-auto gap-lg-4 mt-3 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white-50 transition-all" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white-50 transition-all" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white-50 transition-all" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white-50 transition-all" href="resources.html">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white-50 transition-all" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white-50 transition-all" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                <a class="btn btn-glow rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 btn-login-nav text-uppercase fw-bold text-dark" style="letter-spacing: 1.5px;" href="login.html">
+                    Login <span class="material-symbols-outlined login-icon fs-5">login</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

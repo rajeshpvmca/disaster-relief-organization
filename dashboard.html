@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Stackly</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Inline Dashboard specific overrides to match theme -->
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --header-height: 80px;
+        }
+
+        body {
+            overflow: hidden; 
+            background-color: var(--bg-primary);
+        }
+
+        /* Sidebar Styling */
+        .dash-sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1050;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--glass-border);
+            box-shadow: 5px 0 30px rgba(0,0,0,0.5);
+        }
+
+        .sidebar-header {
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .sidebar-nav {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.5rem 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+
+        .sidebar-nav::-webkit-scrollbar { width: 5px; }
+        .sidebar-nav::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+
+        .nav-item-dash {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+        }
+
+        .nav-item-dash:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .nav-item-dash.active {
+            color: #000;
+            background: var(--accent-gradient);
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transform: translateX(5px);
+        }
+
+        /* Main Content Styling */
+        .dash-main {
+            margin-left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            background-color: var(--bg-primary);
+        }
+
+        .dash-header {
+            height: var(--header-height);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+
+        #dashFrame {
+            flex-grow: 1;
+            border: none;
+            width: 100%;
+            height: calc(100vh - var(--header-height));
+            background: var(--bg-primary);
+        }
+
+        .user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .user-avatar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+        }
+
+        /* Overlay for mobile */
+        .sidebar-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 11, 15, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1040;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active { display: block; opacity: 1; }
+
+        @media (max-width: 991.98px) {
+            .dash-sidebar { transform: translateX(-100%); }
+            .dash-sidebar.active { transform: translateX(0); }
+            .dash-main { margin-left: 0; width: 100%; }
+            #sidebarToggle { 
+                display: flex !important; 
+                align-items: center; 
+                justify-content: center; 
+                width: 40px; 
+                height: 40px; 
+                border-radius: 8px; 
+                background: rgba(255, 255, 255, 0.05); 
+                border: 1px solid rgba(255, 255, 255, 0.1); 
+                color: #fff; 
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .dash-header { padding: 0 1rem; }
+            #navUserName, #navUserEmail { display: none; }
+            .dash-header h4 { font-size: 0.9rem !important; }
+            #roleBadge { font-size: 0.6rem !important; padding: 0.25em 0.5em !important; }
+            .user-avatar { width: 36px; height: 36px; font-size: 1rem; }
+            #signoutBtn { padding: 0.5rem 1rem !important; font-size: 0.8rem !important; }
+            #signoutBtn .material-symbols-outlined { font-size: 1.1rem !important; margin-right: 0 !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="dash-sidebar" id="dashSidebar">
+        <div class="sidebar-header">
+            <!-- White Masked Logo to match dark sidebar -->
+            <div style="-webkit-mask: url('assets/images/logoStackly.webp') no-repeat center left; -webkit-mask-size: contain; mask: url('assets/images/logoStackly.webp') no-repeat center left; mask-size: contain; background-color: white; width: 150px; height: 40px;" aria-label="Stackly Logo"></div>
+        </div>
+        
+        <div class="sidebar-nav">
+            <!-- Volunteer Navigation (matches dashboard.js navVolunteer id) -->
+            <div id="navVolunteer" style="display:none">
+                <p class="text-white-50 px-3 mb-2 mt-2 small text-uppercase tracking-widest fw-bold" style="font-size: 0.75rem;">Volunteer Menu</p>
+                <a href="dashboard/home.html" class="nav-item-dash" data-page="home"><span class="material-symbols-outlined">dashboard</span> Overview</a>
+                <a href="dashboard/missions.html" class="nav-item-dash" data-page="missions"><span class="material-symbols-outlined">map</span> Active Missions</a>
+                <a href="dashboard/training.html" class="nav-item-dash" data-page="training"><span class="material-symbols-outlined">model_training</span> Training Logs</a>
+                <a href="dashboard/intel.html" class="nav-item-dash" data-page="intel"><span class="material-symbols-outlined">radar</span> Field Intel</a>
+                <a href="dashboard/equipment.html" class="nav-item-dash" data-page="equipment"><span class="material-symbols-outlined">backpack</span> Gear & Requisitions</a>
+            </div>
+
+            <!-- Donor Navigation (matches dashboard.js navDonor id) -->
+            <div id="navDonor" style="display:none">
+                <p class="text-white-50 px-3 mb-2 mt-2 small text-uppercase tracking-widest fw-bold" style="font-size: 0.75rem;">Donor Menu</p>
+                <a href="dashboard/donorOverview.html" class="nav-item-dash" data-page="donorOverview"><span class="material-symbols-outlined">dashboard</span> Overview</a>
+                <a href="dashboard/donations.html" class="nav-item-dash" data-page="donations"><span class="material-symbols-outlined">volunteer_activism</span> Donation History</a>
+                <a href="dashboard/impact.html" class="nav-item-dash" data-page="impact"><span class="material-symbols-outlined">monitoring</span> Impact Reports</a>
+                <a href="dashboard/tax-documents.html" class="nav-item-dash" data-page="tax-documents"><span class="material-symbols-outlined">receipt_long</span> Tax Documents</a>
+            </div>
+
+            <!-- Partner Navigation (matches dashboard.js navPartner id) -->
+            <div id="navPartner" style="display:none">
+                <p class="text-white-50 px-3 mb-2 mt-2 small text-uppercase tracking-widest fw-bold" style="font-size: 0.75rem;">Partner Menu</p>
+                <a href="dashboard/partnerOverview.html" class="nav-item-dash" data-page="partnerOverview"><span class="material-symbols-outlined">dashboard</span> Overview</a>
+                <a href="dashboard/logistics.html" class="nav-item-dash" data-page="logistics"><span class="material-symbols-outlined">local_shipping</span> Resource Logistics</a>
+                <a href="dashboard/jointops.html" class="nav-item-dash" data-page="jointops"><span class="material-symbols-outlined">handshake</span> Joint Operations</a>
+                <a href="dashboard/contracts.html" class="nav-item-dash" data-page="contracts"><span class="material-symbols-outlined">history_edu</span> Agreements</a>
+            </div>
+
+            <!-- Admin Navigation -->
+            <div id="navAdmin" style="display:none">
+                <p class="text-white-50 px-3 mb-2 mt-2 small text-uppercase tracking-widest fw-bold" style="font-size: 0.75rem;">Command Access</p>
+                <a href="dashboard/adminOverview.html" class="nav-item-dash" data-page="adminOverview"><span class="material-symbols-outlined">shield_person</span> Command Center</a>
+                <a href="dashboard/users.html" class="nav-item-dash" data-page="users"><span class="material-symbols-outlined">manage_accounts</span> Personnel Mgt</a>
+                <a href="dashboard/logs.html" class="nav-item-dash" data-page="logs"><span class="material-symbols-outlined">terminal</span> System Logs</a>
+                <a href="dashboard/security.html" class="nav-item-dash" data-page="security"><span class="material-symbols-outlined">gpp_bad</span> Threat Mgt</a>
+            </div>
+
+            <p class="text-white-50 mt-4 px-3 mb-3 small text-uppercase tracking-widest fw-bold" style="font-size: 0.75rem;">Account Settings</p>
+            <a href="dashboard/profile.html" class="nav-item-dash" data-page="profile"><span class="material-symbols-outlined">person</span> Profile</a>
+            <a href="dashboard/settings.html" class="nav-item-dash" data-page="settings"><span class="material-symbols-outlined">settings</span> Settings</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dash-main">
+        <header class="dash-header">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-glass text-white d-lg-none p-2 d-flex align-items-center justify-content-center" id="sidebarToggle">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="d-flex flex-column">
+                    <h4 class="mb-0 fw-bold text-white tracking-widest text-uppercase" style="font-size: 1.1rem;">Dashboard</h4>
+                    <span class="badge mt-1 font-monospace" style="width: fit-content; font-size: 0.7rem; color: var(--accent-cyan) !important; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3);" id="roleBadge">OPERATIVE</span>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-4">
+                <div class="text-end d-none d-sm-block">
+                    <div class="fw-bold text-white" id="navUserName">User Name</div>
+                    <div class="text-white-50 font-monospace" style="font-size: 0.75rem;" id="navUserEmail">email@example.com</div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-start border-white border-opacity-10 ps-3">
+                    <div class="user-avatar shadow-sm" id="userAvatar">U</div>
+                    <button class="btn btn-glass rounded-pill px-4 py-2 fw-bold d-flex align-items-center gap-2 transition-all hover-scale text-white-50 hover-text-white border-white border-opacity-25 hover-border-accent" 
+                            id="signoutBtn"
+                            style="font-size: 0.9rem;">
+                        <span class="material-symbols-outlined" style="font-size: 1.2rem;">logout</span> <span class="d-none d-md-inline">Sign Out</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Default iframe routes to 404 since internal dash pages aren't created yet -->
+        <iframe src="404.html" id="dashFrame"></iframe>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

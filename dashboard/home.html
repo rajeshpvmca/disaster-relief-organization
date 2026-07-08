@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Command Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Custom Theme -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: transparent; /* Parent handles background */
+            padding: 1.5rem;
+            color: var(--text-primary);
+        }
+        .metric-card {
+            background: rgba(11, 17, 32, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.5);
+        }
+        .chart-container {
+            background: rgba(11, 17, 32, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .apexcharts-tooltip {
+            background: rgba(11, 17, 32, 0.9) !important;
+            border: 1px solid var(--accent-emerald) !important;
+            color: #fff !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+        }
+        .apexcharts-tooltip-title {
+            background: rgba(16, 185, 129, 0.1) !important;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2) !important;
+        }
+        .intel-list-item {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .intel-list-item:last-child {
+            border-bottom: none;
+        }
+        .intel-list-item:hover {
+            background: rgba(255,255,255,0.02);
+            padding-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid p-0">
+        <!-- Header Section -->
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined text-accent" style="font-size: 2rem;">radar</span>
+                    Field Operative Interface
+                </h2>
+                <p class="text-white-50 mb-0 font-monospace small">SYNC_STATUS: <span class="text-accent">ONLINE</span> | REGION: GLOBAL</p>
+            </div>
+            <button class="btn btn-glow rounded-3 px-4 py-2 d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined">add_alert</span> Report Incident
+            </button>
+        </div>
+
+        <!-- Metrics Row -->
+        <div class="row g-4 mb-4">
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3 bg-accent-gradient bg-opacity-10" style="background: rgba(16, 185, 129, 0.1);">
+                            <span class="material-symbols-outlined text-accent">verified</span>
+                        </div>
+                        <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">+12%</span>
+                    </div>
+                    <h3 class="fw-bold mb-1">124</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Missions Completed</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(6, 182, 212, 0.1);">
+                            <span class="material-symbols-outlined text-accent-secondary">schedule</span>
+                        </div>
+                        <span class="badge bg-info bg-opacity-25 text-info border border-info border-opacity-25">+5%</span>
+                    </div>
+                    <h3 class="fw-bold mb-1">842</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Hours Logged</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(245, 158, 11, 0.1);">
+                            <span class="material-symbols-outlined text-warning">local_hospital</span>
+                        </div>
+                        <span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25">Priority</span>
+                    </div>
+                    <h3 class="fw-bold mb-1 text-warning">3</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Active Deployments</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card border-danger border-opacity-50">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3 pulse-indicator" style="background: rgba(239, 68, 68, 0.1);">
+                            <span class="material-symbols-outlined text-danger">warning</span>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold mb-1 text-danger">Level 2</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Global Threat Level</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row g-4 mb-4">
+            <div class="col-12 col-lg-8">
+                <div class="chart-container h-100">
+                    <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-accent">trending_up</span> Field Activity Timeline
+                    </h5>
+                    <div id="activityChart"></div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="chart-container h-100">
+                    <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-accent-secondary">health_and_safety</span> Readiness Index
+                    </h5>
+                    <div id="readinessChart" class="d-flex justify-content-center align-items-center h-75"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tables/Lists Row -->
+        <div class="row g-4">
+            <div class="col-12 col-lg-6">
+                <div class="chart-container h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold mb-0 d-flex align-items-center gap-2">
+                            <span class="material-symbols-outlined text-warning">my_location</span> Active Assignments
+                        </h5>
+                        <button class="btn btn-glass btn-sm text-white-50">View All</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0" style="background: transparent;">
+                            <thead>
+                                <tr>
+                                    <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Operation Code</th>
+                                    <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Location</th>
+                                    <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border-white border-opacity-10"><span class="font-monospace text-accent">OP-EAGLE-7</span></td>
+                                    <td class="border-white border-opacity-10">Southeast Asia Sector</td>
+                                    <td class="border-white border-opacity-10"><span class="badge bg-warning text-dark">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="border-white border-opacity-10"><span class="font-monospace text-accent">OP-WAVE-2</span></td>
+                                    <td class="border-white border-opacity-10">Pacific Coastline</td>
+                                    <td class="border-white border-opacity-10"><span class="badge bg-info text-dark">Mobilizing</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="border-white border-opacity-10 border-0"><span class="font-monospace text-accent">OP-QUAKE-9</span></td>
+                                    <td class="border-white border-opacity-10 border-0">Northern Ridge</td>
+                                    <td class="border-white border-opacity-10 border-0"><span class="badge bg-success">Secured</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="chart-container h-100">
+                    <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-danger">cell_tower</span> Incoming Intel Broadcasts
+                    </h5>
+                    <div class="intel-list">
+                        <div class="intel-list-item d-flex gap-3">
+                            <span class="material-symbols-outlined text-danger mt-1">campaign</span>
+                            <div>
+                                <h6 class="mb-1 text-white fw-bold">Severe Weather Alert - Region Delta</h6>
+                                <p class="mb-0 text-white-50 small">Category 4 storm approaching the eastern seaboard. All mobile units prepare for immediate evacuation protocols.</p>
+                                <small class="text-accent font-monospace">10 MINS AGO</small>
+                            </div>
+                        </div>
+                        <div class="intel-list-item d-flex gap-3">
+                            <span class="material-symbols-outlined text-info mt-1">info</span>
+                            <div>
+                                <h6 class="mb-1 text-white fw-bold">Supply Drop Confirmation</h6>
+                                <p class="mb-0 text-white-50 small">Medical supply drop completed at coordinates 34.05N, 118.24W. Inventory secured.</p>
+                                <small class="text-accent font-monospace">1 HOUR AGO</small>
+                            </div>
+                        </div>
+                        <div class="intel-list-item d-flex gap-3">
+                            <span class="material-symbols-outlined text-warning mt-1">engineering</span>
+                            <div>
+                                <h6 class="mb-1 text-white fw-bold">Bridge Collapse - Route 44</h6>
+                                <p class="mb-0 text-white-50 small">Main access road is impassable. Rerouting all ground convoys through Sector B.</p>
+                                <small class="text-accent font-monospace">3 HOURS AGO</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ApexCharts Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Activity Timeline Chart (Area)
+            var activityOptions = {
+                series: [{
+                    name: 'Hours Deployed',
+                    data: [31, 40, 28, 51, 42, 109, 100]
+                }, {
+                    name: 'Training Hours',
+                    data: [11, 32, 45, 32, 34, 52, 41]
+                }],
+                chart: {
+                    height: 300,
+                    type: 'area',
+                    fontFamily: 'Montserrat, sans-serif',
+                    toolbar: { show: false },
+                    background: 'transparent'
+                },
+                theme: { mode: 'dark' },
+                colors: ['#10B981', '#06B6D4'], // Emerald and Cyan
+                dataLabels: { enabled: false },
+                stroke: { curve: 'smooth', width: 2 },
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.4,
+                        opacityTo: 0.05,
+                        stops: [0, 90, 100]
+                    }
+                },
+                xaxis: {
+                    categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    axisBorder: { show: false },
+                    axisTicks: { show: false },
+                    labels: { style: { colors: '#94A3B8' } }
+                },
+                yaxis: {
+                    labels: { style: { colors: '#94A3B8' } }
+                },
+                grid: {
+                    borderColor: 'rgba(255,255,255,0.05)',
+                    strokeDashArray: 4,
+                },
+                legend: { position: 'top', horizontalAlign: 'right' }
+            };
+
+            var activityChart = new ApexCharts(document.querySelector("#activityChart"), activityOptions);
+            activityChart.render();
+
+            // Readiness Radial Chart
+            var readinessOptions = {
+                series: [85],
+                chart: {
+                    height: 300,
+                    type: 'radialBar',
+                    fontFamily: 'Montserrat, sans-serif',
+                },
+                plotOptions: {
+                    radialBar: {
+                        startAngle: -135,
+                        endAngle: 135,
+                        hollow: {
+                            margin: 15,
+                            size: '65%',
+                            background: 'transparent',
+                            image: undefined,
+                        },
+                        track: {
+                            background: 'rgba(255,255,255,0.05)',
+                            strokeWidth: '100%',
+                            margin: 0,
+                            dropShadow: { enabled: true, top: 0, left: 0, blur: 3, opacity: 0.5 }
+                        },
+                        dataLabels: {
+                            show: true,
+                            name: {
+                                offsetY: 20,
+                                show: true,
+                                color: '#94A3B8',
+                                fontSize: '12px',
+                                textTransform: 'uppercase',
+                                letterSpacing: '2px'
+                            },
+                            value: {
+                                offsetY: -10,
+                                color: '#fff',
+                                fontSize: '36px',
+                                fontWeight: 'bold',
+                                show: true,
+                            }
+                        }
+                    }
+                },
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shade: 'dark',
+                        type: 'horizontal',
+                        gradientToColors: ['#06B6D4'],
+                        stops: [0, 100]
+                    }
+                },
+                stroke: { lineCap: 'round' },
+                colors: ['#10B981'],
+                labels: ['Combat Ready'],
+            };
+
+            var readinessChart = new ApexCharts(document.querySelector("#readinessChart"), readinessOptions);
+            readinessChart.render();
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mock link handler for danger zone buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.top.location.href = '../404.html';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

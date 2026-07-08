@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Logs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background-color: transparent; padding: 1.5rem; color: var(--text-primary); }
+        .course-card {
+            background: rgba(11, 17, 32, 0.6); backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: 1rem; padding: 1.5rem; 
+            transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;
+        }
+        .course-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.5); }
+        .progress-slim { height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; margin: 1rem 0; }
+        .progress-bar-glow { background: var(--accent-gradient); box-shadow: 0 0 10px var(--accent-cyan); }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined text-accent-secondary" style="font-size: 2rem;">model_training</span>
+                    Training & Certifications
+                </h2>
+                <p class="text-white-50 mb-0 font-monospace small">COMPLIANCE_LEVEL: <span class="text-accent-secondary">92%</span></p>
+            </div>
+            <button class="btn btn-glow rounded-3 px-4 py-2 d-flex align-items-center gap-2" style="background: var(--accent-cyan); color: #000;">
+                <span class="material-symbols-outlined">library_add</span> Browse Course Catalog
+            </button>
+        </div>
+
+        <div class="row g-4">
+            <!-- Course 1 -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="course-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3 bg-accent-gradient bg-opacity-10" style="background: rgba(16, 185, 129, 0.1);">
+                            <span class="material-symbols-outlined text-accent">medical_services</span>
+                        </div>
+                        <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Required</span>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Advanced First Aid & Triage</h5>
+                    <p class="text-white-50 small mb-auto">Comprehensive field medical training for high-stress disaster zones.</p>
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-between text-white-50 small font-monospace">
+                            <span>Status: In Progress</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-slim">
+                            <div class="progress-bar-glow" style="width: 75%;"></div>
+                        </div>
+                        <button class="btn btn-sm btn-outline-theme w-100 mt-2">Resume Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="course-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(6, 182, 212, 0.1);">
+                            <span class="material-symbols-outlined text-accent-secondary">flood</span>
+                        </div>
+                        <span class="badge bg-secondary bg-opacity-25 text-white-50 border border-secondary border-opacity-25">Elective</span>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Flood Water Rescue Operations</h5>
+                    <p class="text-white-50 small mb-auto">Navigating hazardous currents and swift-water evacuation protocols.</p>
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-between text-white-50 small font-monospace">
+                            <span>Status: Not Started</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-slim">
+                            <div class="progress-bar-glow" style="width: 0%;"></div>
+                        </div>
+                        <button class="btn btn-sm btn-glass text-white w-100 mt-2">Start Course</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="course-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(16, 185, 129, 0.1);">
+                            <span class="material-symbols-outlined text-accent">security</span>
+                        </div>
+                        <span class="badge bg-success text-dark"><i class="material-symbols-outlined fs-6 align-middle" style="font-size: 14px;">check_circle</i> Completed</span>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Protocol Zero: Incident Command</h5>
+                    <p class="text-white-50 small mb-auto">Understanding chain of command during level 4 emergencies.</p>
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-between text-white-50 small font-monospace">
+                            <span>Certified: Oct 12, 2024</span>
+                            <span class="text-accent">100%</span>
+                        </div>
+                        <div class="progress-slim">
+                            <div class="progress-bar-glow bg-success" style="width: 100%; box-shadow: 0 0 10px #10B981;"></div>
+                        </div>
+                        <button class="btn btn-sm btn-glass text-accent hover-border-accent w-100 mt-2 d-flex justify-content-center align-items-center gap-2"><span class="material-symbols-outlined fs-6">download</span> Download Certificate</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Course 4 -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="course-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(245, 158, 11, 0.1);">
+                            <span class="material-symbols-outlined text-warning">fire_truck</span>
+                        </div>
+                        <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Required</span>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Wildfire Evacuation Tactics</h5>
+                    <p class="text-white-50 small mb-auto">Fire perimeter safety and rapid civilian extraction methods.</p>
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-between text-white-50 small font-monospace">
+                            <span>Status: Not Started</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-slim">
+                            <div class="progress-bar-glow" style="width: 0%;"></div>
+                        </div>
+                        <button class="btn btn-sm btn-glass text-white w-100 mt-2">Start Course</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Course 5 -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="course-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(16, 185, 129, 0.1);">
+                            <span class="material-symbols-outlined text-accent">contactless</span>
+                        </div>
+                        <span class="badge bg-success text-dark"><i class="material-symbols-outlined fs-6 align-middle" style="font-size: 14px;">check_circle</i> Completed</span>
+                    </div>
+                    <h5 class="fw-bold text-white mb-2">Encrypted Comms Operation</h5>
+                    <p class="text-white-50 small mb-auto">Using shortwave and encrypted satellite radios in dead zones.</p>
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-between text-white-50 small font-monospace">
+                            <span>Certified: Jan 04, 2024</span>
+                            <span class="text-accent">100%</span>
+                        </div>
+                        <div class="progress-slim">
+                            <div class="progress-bar-glow bg-success" style="width: 100%; box-shadow: 0 0 10px #10B981;"></div>
+                        </div>
+                        <button class="btn btn-sm btn-glass text-accent hover-border-accent w-100 mt-2 d-flex justify-content-center align-items-center gap-2"><span class="material-symbols-outlined fs-6">download</span> Download Certificate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mock link handler for danger zone buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.top.location.href = '../404.html';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

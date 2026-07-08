@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Command Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Custom Theme -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background-color: transparent;
+            padding: 1.5rem;
+            color: var(--text-primary);
+        }
+        .metric-card {
+            background: rgba(11, 17, 32, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.1);
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+        .chart-container {
+            background: rgba(11, 17, 32, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .transaction-list-item {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .transaction-list-item:last-child { border-bottom: none; }
+        .transaction-list-item:hover { background: rgba(255,255,255,0.02); padding-left: 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid p-0">
+        <!-- Header Section -->
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined text-accent-secondary" style="font-size: 2rem;">volunteer_activism</span>
+                    Donor Interface
+                </h2>
+                <p class="text-white-50 mb-0 font-monospace small">IMPACT_STATUS: <span class="text-accent-secondary">HIGH</span> | TIER: PLATINUM</p>
+            </div>
+            <button class="btn btn-glow rounded-3 px-4 py-2 d-flex align-items-center gap-2" style="background: var(--accent-cyan); color: #000; box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);">
+                <span class="material-symbols-outlined">payments</span> Make a Contribution
+            </button>
+        </div>
+
+        <!-- Metrics Row -->
+        <div class="row g-4 mb-4">
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(6, 182, 212, 0.1);">
+                            <span class="material-symbols-outlined text-accent-secondary">account_balance</span>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold mb-1">$45,200</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Total Contributed</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3 bg-accent-gradient bg-opacity-10" style="background: rgba(16, 185, 129, 0.1);">
+                            <span class="material-symbols-outlined text-accent">group</span>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold mb-1">1,240</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Lives Impacted</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(245, 158, 11, 0.1);">
+                            <span class="material-symbols-outlined text-warning">local_shipping</span>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold mb-1 text-warning">4</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Missions Funded</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+                <div class="metric-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="p-2 rounded-3" style="background: rgba(139, 92, 246, 0.1);">
+                            <span class="material-symbols-outlined" style="color: #8b5cf6;">receipt_long</span>
+                        </div>
+                    </div>
+                    <h3 class="fw-bold mb-1" style="color: #8b5cf6;">12</h3>
+                    <p class="text-white-50 mb-0 small text-uppercase tracking-widest">Tax Receipts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row g-4 mb-4">
+            <div class="col-12 col-lg-8">
+                <div class="chart-container h-100">
+                    <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-accent-secondary">monitoring</span> Contribution History
+                    </h5>
+                    <div id="contributionChart"></div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="chart-container h-100">
+                    <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-accent">pie_chart</span> Funds Allocation
+                    </h5>
+                    <div id="allocationChart" class="d-flex justify-content-center align-items-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tables/Lists Row -->
+        <div class="row g-4">
+            <div class="col-12 col-lg-6">
+                <div class="chart-container h-100">
+                    <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-white">history</span> Recent Transactions
+                    </h5>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0" style="background: transparent;">
+                            <thead>
+                                <tr>
+                                    <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Date</th>
+                                    <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Amount</th>
+                                    <th class="text-white-50 small tracking-widest text-uppercase border-white border-opacity-10">Allocation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border-white border-opacity-10 font-monospace">Oct 12, 2024</td>
+                                    <td class="border-white border-opacity-10 font-monospace text-accent-secondary">$5,000</td>
+                                    <td class="border-white border-opacity-10">General Fund</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-white border-opacity-10 font-monospace">Aug 05, 2024</td>
+                                    <td class="border-white border-opacity-10 font-monospace text-accent-secondary">$12,500</td>
+                                    <td class="border-white border-opacity-10">OP-EAGLE-7 (Medical)</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-white border-opacity-10 border-0 font-monospace">Jan 22, 2024</td>
+                                    <td class="border-white border-opacity-10 border-0 font-monospace text-accent-secondary">$2,200</td>
+                                    <td class="border-white border-opacity-10 border-0">Logistics Support</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="chart-container h-100">
+                    <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined text-warning">star</span> Impact Reports
+                    </h5>
+                    <div class="intel-list">
+                        <div class="transaction-list-item d-flex gap-3 align-items-center">
+                            <span class="material-symbols-outlined text-warning fs-1">description</span>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1 text-white fw-bold">Q3 2024 Operations Report</h6>
+                                <p class="mb-0 text-white-50 small">Detailed breakdown of funds deployed in Southeast Asia.</p>
+                            </div>
+                            <button class="btn btn-glass btn-sm text-white-50 hover-text-white hover-border-accent"><span class="material-symbols-outlined">download</span></button>
+                        </div>
+                        <div class="transaction-list-item d-flex gap-3 align-items-center">
+                            <span class="material-symbols-outlined text-warning fs-1">description</span>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1 text-white fw-bold">OP-WAVE-2 After Action Report</h6>
+                                <p class="mb-0 text-white-50 small">Impact summary for the Pacific Coastline recovery.</p>
+                            </div>
+                            <button class="btn btn-glass btn-sm text-white-50 hover-text-white hover-border-accent"><span class="material-symbols-outlined">download</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ApexCharts Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Contribution Timeline Chart (Bar)
+            var contributionOptions = {
+                series: [{
+                    name: 'Donations ($)',
+                    data: [1500, 2200, 0, 12500, 500, 5000, 0]
+                }],
+                chart: {
+                    height: 300,
+                    type: 'bar',
+                    fontFamily: 'Montserrat, sans-serif',
+                    toolbar: { show: false },
+                    background: 'transparent'
+                },
+                theme: { mode: 'dark' },
+                colors: ['#06B6D4'], // Cyan
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4,
+                        columnWidth: '40%',
+                    }
+                },
+                dataLabels: { enabled: false },
+                xaxis: {
+                    categories: ['Jan', 'Mar', 'May', 'Jul', 'Aug', 'Oct', 'Dec'],
+                    axisBorder: { show: false },
+                    axisTicks: { show: false },
+                    labels: { style: { colors: '#94A3B8' } }
+                },
+                yaxis: {
+                    labels: { 
+                        style: { colors: '#94A3B8' },
+                        formatter: function (value) { return "$" + value; }
+                    }
+                },
+                grid: {
+                    borderColor: 'rgba(255,255,255,0.05)',
+                    strokeDashArray: 4,
+                }
+            };
+            var contributionChart = new ApexCharts(document.querySelector("#contributionChart"), contributionOptions);
+            contributionChart.render();
+
+            // Allocation Donut Chart
+            var allocationOptions = {
+                series: [45, 25, 20, 10],
+                labels: ['Medical Supplies', 'Logistics', 'Food & Water', 'Admin'],
+                chart: {
+                    type: 'donut',
+                    height: 300,
+                    fontFamily: 'Montserrat, sans-serif',
+                    background: 'transparent'
+                },
+                theme: { mode: 'dark' },
+                colors: ['#10B981', '#06B6D4', '#F59E0B', '#8B5CF6'],
+                stroke: { show: true, colors: ['#0B1120'], width: 2 },
+                dataLabels: { enabled: false },
+                legend: { position: 'bottom' },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '75%',
+                            labels: {
+                                show: true,
+                                name: { color: '#94A3B8' },
+                                value: { color: '#fff', fontSize: '24px', fontWeight: 'bold' }
+                            }
+                        }
+                    }
+                }
+            };
+            var allocationChart = new ApexCharts(document.querySelector("#allocationChart"), allocationOptions);
+            allocationChart.render();
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mock link handler for danger zone buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.top.location.href = '../404.html';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

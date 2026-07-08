@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background-color: transparent; padding: 1.5rem; color: var(--text-primary); }
+        .content-card {
+            background: rgba(11, 17, 32, 0.6); backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .table-dark { background: transparent; }
+        .table-dark th { border-bottom: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .table-dark td { border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+        .table-dark tbody tr:hover td { background: rgba(255,255,255,0.02); }
+        .user-avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); color: #fff; font-weight: bold; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined text-white" style="font-size: 2rem;">manage_accounts</span>
+                    Personnel Management
+                </h2>
+                <p class="text-white-50 mb-0 font-monospace small">ACCESS_LEVEL: <span class="text-danger">ROOT_ADMIN</span></p>
+            </div>
+            <div class="d-flex gap-2">
+                <input type="text" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Search by name or ID..." style="width: 250px;">
+                <button class="btn btn-outline-light btn-sm rounded-3 px-3 d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-6">person_add</span> Invite User
+                </button>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="table-responsive">
+                <table class="table table-dark table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>ID</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Last Login</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="user-avatar" style="background: rgba(16, 185, 129, 0.2); color: var(--accent-emerald); border-color: var(--accent-emerald);">JD</div>
+                                    <div class="d-flex flex-column">
+                                        <span class="text-white">John Doe</span>
+                                        <span class="text-white-50 small font-monospace">john.doe@example.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-monospace text-white-50">USR-8821</td>
+                            <td><span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Volunteer</span></td>
+                            <td><span class="text-success d-flex align-items-center gap-1 small"><span class="pulse-indicator bg-success" style="width:8px;height:8px;display:inline-block;border-radius:50%;"></span> Online</span></td>
+                            <td class="text-white-50 small">Just now</td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-glass text-white-50 p-1 me-1"><span class="material-symbols-outlined fs-5">edit</span></button>
+                                <button class="btn btn-sm btn-glass text-danger p-1"><span class="material-symbols-outlined fs-5">block</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="user-avatar" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; border-color: #f59e0b;">SW</div>
+                                    <div class="d-flex flex-column">
+                                        <span class="text-white">Sarah Wilson</span>
+                                        <span class="text-white-50 small font-monospace">s.wilson@donor.org</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-monospace text-white-50">USR-9102</td>
+                            <td><span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25">Donor</span></td>
+                            <td><span class="text-white-50 d-flex align-items-center gap-1 small"><span class="bg-secondary" style="width:8px;height:8px;display:inline-block;border-radius:50%;"></span> Offline</span></td>
+                            <td class="text-white-50 small">2 hours ago</td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-glass text-white-50 p-1 me-1"><span class="material-symbols-outlined fs-5">edit</span></button>
+                                <button class="btn btn-sm btn-glass text-danger p-1"><span class="material-symbols-outlined fs-5">block</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border-0">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="user-avatar" style="background: rgba(239, 68, 68, 0.2); color: #ef4444; border-color: #ef4444;">HX</div>
+                                    <div class="d-flex flex-column">
+                                        <span class="text-white text-decoration-line-through">Hacker X</span>
+                                        <span class="text-white-50 small font-monospace">unknown@tor.onion</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="border-0 font-monospace text-white-50">USR-0000</td>
+                            <td class="border-0"><span class="badge bg-secondary bg-opacity-25 text-white-50 border border-secondary border-opacity-25">Unknown</span></td>
+                            <td class="border-0"><span class="text-danger d-flex align-items-center gap-1 small"><span class="bg-danger" style="width:8px;height:8px;display:inline-block;border-radius:50%;"></span> Banned</span></td>
+                            <td class="border-0 text-white-50 small">Never</td>
+                            <td class="border-0 text-end">
+                                <button class="btn btn-sm btn-glass text-success p-1"><span class="material-symbols-outlined fs-5">check_circle</span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mock link handler for danger zone buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.top.location.href = '../404.html';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

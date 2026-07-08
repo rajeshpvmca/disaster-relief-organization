@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background-color: transparent; padding: 1.5rem; color: var(--text-primary); }
+        .content-card {
+            background: rgba(11, 17, 32, 0.6); backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .table-dark { background: transparent; }
+        .table-dark th { border-bottom: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .table-dark td { border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+        .table-dark tbody tr:hover td { background: rgba(255,255,255,0.02); }
+        .tx-id { font-family: monospace; color: var(--accent-cyan); }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined text-accent-secondary" style="font-size: 2rem;">volunteer_activism</span>
+                    Donation History
+                </h2>
+                <p class="text-white-50 mb-0 font-monospace small">TOTAL_CONTRIBUTIONS: <span class="text-accent-secondary">$45,200</span></p>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-theme btn-sm rounded-3 px-3 d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined fs-6">download</span> Export CSV
+                </button>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="d-flex justify-content-between mb-3">
+                <h5 class="fw-bold text-white mb-0">Transaction Ledger</h5>
+                <select class="form-select form-select-sm w-auto bg-dark text-white border-secondary">
+                    <option>2024</option>
+                    <option>2023</option>
+                    <option>All Time</option>
+                </select>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Transaction ID</th>
+                            <th>Amount</th>
+                            <th>Payment Method</th>
+                            <th>Allocation</th>
+                            <th>Status</th>
+                            <th>Receipt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-white-50">Oct 12, 2024</td>
+                            <td><span class="tx-id">TXN-8849-XYZ</span></td>
+                            <td class="fw-bold text-white">$5,000.00</td>
+                            <td class="text-white-50"><i class="material-symbols-outlined fs-6 align-middle">credit_card</i> **** 4242</td>
+                            <td>General Fund</td>
+                            <td><span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Completed</span></td>
+                            <td><button class="btn btn-sm btn-glass text-white-50 p-1"><span class="material-symbols-outlined fs-5">receipt</span></button></td>
+                        </tr>
+                        <tr>
+                            <td class="text-white-50">Aug 05, 2024</td>
+                            <td><span class="tx-id">TXN-7731-ABC</span></td>
+                            <td class="fw-bold text-white">$12,500.00</td>
+                            <td class="text-white-50"><i class="material-symbols-outlined fs-6 align-middle">account_balance</i> Wire Transfer</td>
+                            <td>OP-EAGLE-7 (Medical)</td>
+                            <td><span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Completed</span></td>
+                            <td><button class="btn btn-sm btn-glass text-white-50 p-1"><span class="material-symbols-outlined fs-5">receipt</span></button></td>
+                        </tr>
+                        <tr>
+                            <td class="text-white-50">Jun 15, 2024</td>
+                            <td><span class="tx-id">TXN-6620-DEF</span></td>
+                            <td class="fw-bold text-white">$250.00</td>
+                            <td class="text-white-50"><i class="material-symbols-outlined fs-6 align-middle">credit_card</i> **** 4242</td>
+                            <td>Monthly Recurring</td>
+                            <td><span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Completed</span></td>
+                            <td><button class="btn btn-sm btn-glass text-white-50 p-1"><span class="material-symbols-outlined fs-5">receipt</span></button></td>
+                        </tr>
+                        <tr>
+                            <td class="text-white-50 border-0">Jan 22, 2024</td>
+                            <td class="border-0"><span class="tx-id">TXN-1102-LMN</span></td>
+                            <td class="border-0 fw-bold text-white">$2,200.00</td>
+                            <td class="border-0 text-white-50"><i class="material-symbols-outlined fs-6 align-middle">account_balance</i> ACH Transfer</td>
+                            <td class="border-0">Logistics Support</td>
+                            <td class="border-0"><span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Completed</span></td>
+                            <td class="border-0"><button class="btn btn-sm btn-glass text-white-50 p-1"><span class="material-symbols-outlined fs-5">receipt</span></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mock link handler for danger zone buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.top.location.href = '../404.html';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Services | Stackly</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .asymmetric-mask {
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="position-relative overflow-hidden d-flex align-items-center justify-content-center pt-5" style="min-height: 45vh; margin-top: -1px;">
+            <!-- Background Image with slowZoom -->
+            <div class="position-absolute inset-0" style="animation: slowZoom 20s ease-in-out infinite alternate;">
+                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=2000" class="w-100 h-100 object-fit-cover" alt="Services Background" style="filter: brightness(0.5);">
+            </div>
+            
+            <!-- Ambient Glow -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 100%); z-index: 0;"></div>
+            <div class="position-absolute rounded-circle bg-accent opacity-25 pulse-ring" style="top: 20%; left: 10%; width: 30rem; height: 30rem; filter: blur(8rem); z-index: 0;"></div>
+            <div class="position-absolute rounded-circle bg-info opacity-25 pulse-ring" style="bottom: -10%; right: 10%; width: 25rem; height: 25rem; filter: blur(6rem); z-index: 0;"></div>
+            
+            <!-- Glass Overlay -->
+            <div class="position-absolute inset-0 bg-modern-dark bg-opacity-50 z-0"></div>
+            
+            <div class="container position-relative z-1 py-5 mt-5 text-center">
+                <span class="d-inline-block py-1 px-3 glass-card rounded-pill small fw-bold text-accent tracking-widest mb-3 border border-accent border-opacity-50" data-aos="fade-down">OUR LIFECYCLE</span>
+                <h1 class="display-3 fw-bold text-white mb-3" data-aos="fade-up" data-aos-delay="100">
+                    Response with Precision & <br class="d-none d-md-block"/>
+                    <span class="text-gradient">Empathy.</span>
+                </h1>
+                <p class="fs-4 text-white-50 mx-auto" style="max-width: 800px;" data-aos="fade-up" data-aos-delay="200">
+                    In the face of crisis, time is the only currency that matters. Stackly operates a 360-degree response lifecycle, moving from immediate tactical rescue to sustainable community restoration. We don't just provide aid; we rebuild hope through structured, expert-led intervention.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3 pt-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="d-flex align-items-center gap-2 fw-bold text-white glass-card px-4 py-2 rounded-pill border-accent hover-scale">
+                        <span class="material-symbols-outlined fs-5 text-accent">check_circle</span> Rapid Deployment
+                    </div>
+                    <div class="d-flex align-items-center gap-2 fw-bold text-white glass-card px-4 py-2 rounded-pill border-accent hover-scale">
+                        <span class="material-symbols-outlined fs-5 text-accent">check_circle</span> Global Logistics
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Rescue -->
+        <section class="py-5 bg-modern-dark border-top border-bottom border-secondary border-opacity-25" data-aos="fade-up">
+            <div class="container py-5">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4 mb-5 pb-3">
+                    <div style="max-width: 700px;">
+                        <h2 class="display-6 fw-bold text-white mb-3">Elite Search and Rescue</h2>
+                        <p class="fs-5 text-white-50 m-0">Our USAR-certified teams are trained for extreme environments, from seismic collapse zones to flood-stricken urban centers.</p>
+                    </div>
+                    <a class="text-accent fw-bold text-decoration-none d-inline-flex align-items-center gap-2 hover-text-white transition-all pb-1" href="#">
+                        View Training Specs <span class="material-symbols-outlined fs-5">arrow_forward</span>
+                    </a>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- SAR Cards -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-3 p-md-4 rounded-4 shadow-lg h-100 hover-glow hover-scale transition-transform border border-success border-opacity-25 position-relative group" style="box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0 rounded-4" style="background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.1), transparent 60%);"></div>
+                            <div class="position-relative z-1">
+                                <div class="overflow-hidden rounded-3 mb-4 position-relative">
+                                    <img class="w-100 object-fit-cover transition-transform group-hover-scale" style="height: 250px;" alt="Canine Units" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMPEJQENEH1vieoOSkurrG0Rn3wFMpOLB3hsod8GmxNmQEkiwra2CLS-Zqfmabryzl3lYH1qjb7pRK7RlE4AbGNFKR6bkpeEn-cKJYSxyVauRcIpQWSsc1dxLKSXAcYLW9dIuobx5SPRtA_aYB-JXDoOXgTCZ2BjG9qMhltIDNlnyWyCZeVlLc5fMELj1Rp_KbUJW_f_QUv7s6btgf14ark27pLi8cs0ZJJbsac8VGWq3RPhA2nLr-EuhOYGf7-z9CESLhrQ5J3_h-"/>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(11,17,32,0.9), transparent);">
+                                        <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50">UNIT 01</span>
+                                    </div>
+                                </div>
+                                <h3 class="fs-4 fw-bold text-white mb-2">Canine Units</h3>
+                                <p class="text-white-50 mb-0">Highly specialized search dogs trained to detect life in complex structural failures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="glass-card p-3 p-md-4 rounded-4 shadow-lg h-100 hover-glow hover-scale transition-transform border border-info border-opacity-25 position-relative group" style="box-shadow: inset 0 0 20px rgba(13, 202, 240, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0 rounded-4" style="background: radial-gradient(circle at top left, rgba(13, 202, 240, 0.1), transparent 60%);"></div>
+                            <div class="position-relative z-1">
+                                <div class="overflow-hidden rounded-3 mb-4 position-relative">
+                                    <img class="w-100 object-fit-cover transition-transform group-hover-scale" style="height: 250px;" alt="Aerial Reconnaissance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCciz4y1FqCHR6uLCLiKzQsfFCShe-z_wil4OugVaOmEY_hQONk368yjwDpXKBhgjZHTboR5kzc-v5a852QrrxEQqOoq3DKTjtbeAMPyn5iPBG_vbLrI2akkPJ-teMLgJzODETyl2E40v7BrPsU_JHIYAiLpsjhu86-y8w6xTZuEXtnKtMIgTb4vgzVlz1zQSvAyTlmVY6zYgzSTGxWyJbz_tl17nOl6ZAxxBiIUd-KLwvOPBipOYGAFx3wIlMSCqa30QiQcYsONxhx"/>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(11,17,32,0.9), transparent);">
+                                        <span class="badge bg-info bg-opacity-25 text-info border border-info border-opacity-50">UNIT 02</span>
+                                    </div>
+                                </div>
+                                <h3 class="fs-4 fw-bold text-white mb-2">Aerial Reconnaissance</h3>
+                                <p class="text-white-50 mb-0">Fleet of thermal-imaging drones providing real-time data to ground commanders.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="glass-card p-3 p-md-4 rounded-4 shadow-lg h-100 hover-glow hover-scale transition-transform border border-primary border-opacity-25 position-relative group" style="box-shadow: inset 0 0 20px rgba(13, 110, 253, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0 rounded-4" style="background: radial-gradient(circle at top left, rgba(13, 110, 253, 0.1), transparent 60%);"></div>
+                            <div class="position-relative z-1">
+                                <div class="overflow-hidden rounded-3 mb-4 position-relative">
+                                    <img class="w-100 object-fit-cover transition-transform group-hover-scale" style="height: 250px;" alt="Tactical Extraction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxBJZ04pJc8H75KCtwadjnrC_QLeIwmNmSGgC-ZHkDPlsnFdMAsuRTMWC40acvxQc2yY-XDm8yc1bNXHYTQlFgqBw5pgFqDBgMlC-EU8hHLQc0gIaUnHOroTUJ64HYfZAeEmEWp-JHtjkrgs1PyqUik5mqU5PwiHjQMTyYq_jnWqaMWzEl_LITdoINVlv20yIB8e0BanWbSQa52KLp8vZ2ZJlDpINGtE4RUZsGx_lYFH1XvQlUwpjmEf5misRgauZGZIguMdigY-6b"/>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(11,17,32,0.9), transparent);">
+                                        <span class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-50">UNIT 03</span>
+                                    </div>
+                                </div>
+                                <h3 class="fs-4 fw-bold text-white mb-2">Tactical Extraction</h3>
+                                <p class="text-white-50 mb-0">Certified technicians equipped for high-angle and confined-space rescues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Aid -->
+        <section class="py-5" data-aos="fade-in">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+                        <div class="glass-card p-2 rounded-4 shadow-lg asymmetric-mask hover-scale">
+                            <img class="w-100 object-fit-cover rounded-3" style="height: 600px;" alt="Medical field care" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBycJJqnmAV3q5IkYUjlLunnTgTXnR4D1aFoaUARlNozRNmVsm8OVvohG1xk2xw2l6QXComYU4ZkUtyTJ_1CJHOYpMKsGVou_qvvvV1j4Qs6j8ezKEkyL7pVRHlVdyfN947dfkz7iSfZLVsT65OHhyH65_kpg5Amcq1pLFqnhTu80j2Bg1Rv7HRqcvLzN1yiVSVuczNla8Fm7iOXyzVOtD7kt9Qkll6Joe3FV6irF3L9DmjBT-mCvyEtXBqsAnNR2fzhmCgRA-Pu0S"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
+                        <div class="mb-5">
+                            <span class="small fw-bold text-accent text-uppercase tracking-widest mb-3 d-block">Rapid Medical Response</span>
+                            <h2 class="display-6 fw-bold text-white mb-4">Advanced Field Care & Stabilization</h2>
+                            <p class="fs-5 text-white-50 m-0">We deploy Level II surgical field hospitals within 48 hours of a disaster declaration. Our clinics are self-sustaining, featuring clean water systems and satellite communications.</p>
+                        </div>
+                        
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex gap-4 p-4 glass-card rounded-4 hover-glow hover-scale border border-success border-opacity-25" style="box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.05);">
+                                <div class="position-relative flex-shrink-0" style="width: 48px; height: 48px;">
+                                    <div class="position-absolute inset-0 rounded-circle bg-success opacity-25 pulse-ring"></div>
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center w-100 h-100 bg-success bg-opacity-10 border border-success border-opacity-50 position-relative z-1">
+                                        <span class="material-symbols-outlined text-success">emergency_heat</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="fs-5 fw-bold text-white mb-2">Mobile Trauma Units</h4>
+                                    <p class="text-white-50 m-0">Surgical suites capable of performing life-saving procedures in remote areas.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-4 p-4 glass-card rounded-4 hover-glow hover-scale border border-info border-opacity-25" style="box-shadow: inset 0 0 20px rgba(13, 202, 240, 0.05);">
+                                <div class="position-relative flex-shrink-0" style="width: 48px; height: 48px;">
+                                    <div class="position-absolute inset-0 rounded-circle bg-info opacity-25 pulse-ring"></div>
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center w-100 h-100 bg-info bg-opacity-10 border border-info border-opacity-50 position-relative z-1">
+                                        <span class="material-symbols-outlined text-info">vaccines</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="fs-5 fw-bold text-white mb-2">Vaccination & Outreach</h4>
+                                    <p class="text-white-50 m-0">Preventative care and epidemic management for displaced populations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logistics & Distribution -->
+        <section class="py-5 bg-modern-dark border-top border-bottom border-secondary border-opacity-25" data-aos="fade-up">
+            <div class="container py-5">
+                <div class="text-center mb-5 pb-3">
+                    <h2 class="display-6 fw-bold text-white mb-3">Logistics & Global Distribution</h2>
+                    <p class="text-white-50 mx-auto fs-5" style="max-width: 600px;">Our supply chain is a masterpiece of efficiency, reaching areas where infrastructure has completely failed.</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="h-100 rounded-4 p-4 p-md-5 d-flex flex-column justify-content-between glass-card hover-scale border-start border-4 border-success">
+                            <div>
+                                <span class="material-symbols-outlined display-5 mb-4 text-accent">local_shipping</span>
+                                <h3 class="fs-3 fw-bold text-white mb-3">The Last Mile Delivery</h3>
+                                <p class="text-white-50 m-0">Utilizing heavy-duty 4x4s, pack animals, and drones to ensure food reaches the most remote villages.</p>
+                            </div>
+                            <div class="mt-5 pt-4 border-top border-white border-opacity-25">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex" style="margin-left: 10px;">
+                                        <div class="rounded-circle bg-modern-dark border border-2 border-white border-opacity-25" style="width: 40px; height: 40px; margin-left: -10px;"></div>
+                                        <div class="rounded-circle border border-2 border-white border-opacity-25 bg-accent-gradient" style="width: 40px; height: 40px; margin-left: -10px;"></div>
+                                        <div class="rounded-circle glass-card border border-2 border-white border-opacity-25" style="width: 40px; height: 40px; margin-left: -10px;"></div>
+                                        <div class="rounded-circle text-white fw-bold d-flex align-items-center justify-content-center border border-2 border-white border-opacity-25 bg-modern-dark" style="width: 40px; height: 40px; margin-left: -10px; font-size: 0.8rem;">+12k</div>
+                                    </div>
+                                    <p class="small text-white-50 text-uppercase tracking-widest fw-bold m-0 ms-2">Active Field Agents</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 d-flex flex-column gap-4">
+                        <div class="flex-grow-1 rounded-4 p-4 p-md-5 d-flex flex-column justify-content-center bg-modern-dark border border-accent border-opacity-50 hover-scale shadow-lg position-relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="position-absolute top-0 end-0 w-100 h-100 z-0" style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.2), transparent 70%);"></div>
+                            <h3 class="display-6 fw-bold mb-3 text-accent transition-transform group-hover-scale z-1 position-relative">1.2M Gallons</h3>
+                            <p class="text-white-50 m-0 position-relative z-1">Pure water filtered and distributed weekly through our portable purification grids.</p>
+                        </div>
+                        <div class="flex-grow-1 rounded-4 p-4 p-md-5 d-flex flex-column justify-content-center glass-card hover-scale position-relative overflow-hidden group border border-info border-opacity-25" data-aos="zoom-in" data-aos-delay="300" style="box-shadow: inset 0 0 30px rgba(6, 182, 212, 0.1);">
+                            <div class="position-absolute bottom-0 start-0 w-100 h-100 z-0" style="background: radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.2), transparent 70%);"></div>
+                            <div class="display-4 fw-bold text-white mb-2 transition-transform group-hover-scale z-1 position-relative">99.8%</div>
+                            <p class="fw-bold text-info m-0 text-uppercase small tracking-widest position-relative z-1">Supply Accuracy Rate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="rounded-4 position-relative overflow-hidden glass-card p-2 hover-scale" style="height: 300px;">
+                            <img class="w-100 h-100 object-fit-cover rounded-3" alt="Global Operations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCFCqbxmf-Ah75AcWLNS7SMp_nevLHgEnicdw7J4AUyEzrxD4lpABAofkiYDL7cH98KMuikrRcVzmxtiYPK_0vdiQ0OfwUaVUxaEjx9q0ttNr71lcsVSD23EUPtewsczYdAiIQdDNe7KTkiTPzzPHIh1tZH_sZv1VyzK1MPSj6pVtR9tlDxJjofp9QkDw9stwWI8foOfJfxfWoJ1Y5cVa_yRqp9fuQn9G_4CLsYx5tnaP_dwV4YMnXA7Z6VIvbhAfNyXwasmSlp8yi"/>
+                            <div class="position-absolute inset-0 d-flex align-items-end p-4 p-md-5 rounded-3 m-2" style="background: linear-gradient(to top, rgba(11,17,32,0.9), transparent);">
+                                <p class="fs-4 fw-bold text-white m-0">24/7 Global Operations Center Monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Temporary Sheltering -->
+        <section class="py-5" data-aos="fade-in">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <h2 class="display-6 fw-bold text-white mb-4">Dignity in Displacement</h2>
+                        <p class="fs-5 text-white-50 mb-5">Shelter is more than just a roof. It is the first step toward reclaiming normalcy. Our rapid-assembly modular homes are designed for climate resilience and long-term comfort.</p>
+                        
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex align-items-start gap-3 glass-card p-3 rounded-4 hover-glow border-start border-4 border-success">
+                                <span class="material-symbols-outlined text-accent fs-3 mt-1">house</span>
+                                <div>
+                                    <strong class="d-block fw-bold text-white mb-1">Modular Design</strong>
+                                    <span class="text-white-50 small">Units can be expanded or combined as families grow or change.</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3 glass-card p-3 rounded-4 hover-glow border-start border-4 border-info">
+                                <span class="material-symbols-outlined text-accent-secondary fs-3 mt-1">solar_power</span>
+                                <div>
+                                    <strong class="d-block fw-bold text-white mb-1">Energy Independent</strong>
+                                    <span class="text-white-50 small">Each unit includes integrated solar panels for basic power needs.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="row g-3">
+                            <div class="col-6 mt-5 pt-4">
+                                <div class="glass-card p-2 rounded-4 hover-scale shadow-lg h-100">
+                                    <img class="w-100 h-100 object-fit-cover rounded-3" style="height: 350px;" alt="Modular Housing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkKRoY51W_cUzM21nsCr39NJQYHzn4ovX9GM-v5Cd52GyIbzE33m8Glum2Vv3TjxgZHW1rXri9zcK2_dXXqNNIDTuyUAcEOs3-GidxKKVsCIHzOpli8N5eexpOT3RYLXDOmh3cF1eddyagy1OjeZUXK65lpFGB3ekCMKJ2F0uUp1HV6RirZvQ0APen-FvqPw6XbYelW2aO5fQgaZtUzUS5-b2hsAWov4O9RFTHdXN-3EtiwN9yzeeCRQ1svf8jXpK-FrIhUsE2HgNO"/>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-5 pb-4">
+                                <div class="glass-card p-2 rounded-4 hover-scale shadow-lg h-100">
+                                    <img class="w-100 h-100 object-fit-cover rounded-3" style="height: 350px;" alt="Happy Family" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLYpj8h0B8NpTyPOxvLiNr1G4tGciuSGBYLOZZ8dM2K9wOFeKCJhrhj35g-QcJuxrWd3jD3OGgXTSczXO3K7YY4liNisNazQCGzwCVeZelnYqp_OOFiZmBW-miXe7VEFgw79D7M9lSFfWCWtxErG1fmWDP4pr5F_ayXQmlA6RaO8tI7ROksBsjZoL7lpDJRTWYZQmFmnVwwXi_c3v5U8Mv20tFLv9pzjtwGnQY41zwfjU4zBuDXEL6hSbTLWSnxnOBOLqTJxE4IlOi"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mental Health Support -->
+        <section class="py-5 position-relative bg-modern-dark border-top border-bottom border-secondary border-opacity-25" data-aos="fade-up">
+            <div class="dot-pattern position-absolute inset-0 opacity-25" style="pointer-events: none;"></div>
+            <div class="container py-5 text-center position-relative z-1">
+                <div class="mx-auto mb-5" style="max-width: 800px;">
+                    <span class="material-symbols-outlined display-3 mb-4 text-accent" style="font-variation-settings: 'FILL' 1;">psychology</span>
+                    <h2 class="display-6 fw-bold text-white mb-4">Healing the Invisible Wounds</h2>
+                    <p class="fs-5 text-white-50 m-0">Physical aid is only half the battle. Our trauma-informed care specialists provide immediate psychological first aid and long-term counseling for survivors and first responders alike.</p>
+                </div>
+                
+                <div class="row g-4 pt-3 text-start">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-4 rounded-4 border border-success border-opacity-25 shadow-lg h-100 hover-glow hover-scale position-relative overflow-hidden" style="box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 60%);"></div>
+                            <div class="position-relative z-1">
+                                <h4 class="fs-5 fw-bold text-white mb-2 d-flex align-items-center gap-2"><span class="material-symbols-outlined text-success">psychiatry</span> Crisis Counseling</h4>
+                                <p class="text-white-50 small m-0">On-the-ground support for immediate trauma mitigation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="glass-card p-4 rounded-4 border border-info border-opacity-25 shadow-lg h-100 hover-glow hover-scale position-relative overflow-hidden" style="box-shadow: inset 0 0 20px rgba(13, 202, 240, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(13, 202, 240, 0.15), transparent 60%);"></div>
+                            <div class="position-relative z-1">
+                                <h4 class="fs-5 fw-bold text-white mb-2 d-flex align-items-center gap-2"><span class="material-symbols-outlined text-info">child_care</span> Child-Safe Zones</h4>
+                                <p class="text-white-50 small m-0">Creative therapy and play spaces for children in camps.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="glass-card p-4 rounded-4 border border-warning border-opacity-25 shadow-lg h-100 hover-glow hover-scale position-relative overflow-hidden" style="box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.05);">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.15), transparent 60%);"></div>
+                            <div class="position-relative z-1">
+                                <h4 class="fs-5 fw-bold text-white mb-2 d-flex align-items-center gap-2"><span class="material-symbols-outlined text-warning">self_improvement</span> Resilience Training</h4>
+                                <p class="text-white-50 small m-0">Community programs to strengthen long-term mental health.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Rebuilding -->
+        <section class="py-5" data-aos="fade-in">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <div class="sticky-top glass-card p-4 rounded-4" style="top: 100px;">
+                            <h2 class="display-6 fw-bold text-white mb-4">The Road to Restoration.</h2>
+                            <p class="text-white-50 mb-0">Our commitment lasts long after the initial crisis has passed.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8" data-aos="fade-left">
+                        <div class="d-flex flex-column gap-5 border-start border-2 border-white border-opacity-25 ms-3 ps-4 pb-4">
+                            
+                            <div class="position-relative group glass-card p-4 rounded-4 hover-scale" style="cursor: pointer;">
+                                <div class="position-absolute rounded-circle bg-success opacity-25 pulse-ring transition-colors d-none d-lg-block" style="width: 32px; height: 32px; left: -43px; top: 22px;"></div>
+                                <div class="position-absolute rounded-circle border border-2 border-white border-opacity-25 transition-colors bg-modern-dark z-1 d-none d-lg-block" style="width: 16px; height: 16px; left: -35px; top: 30px;" onmouseover="this.style.backgroundColor='#10B981'; this.style.borderColor='#10B981'" onmouseout="this.style.backgroundColor='#131B2E'; this.style.borderColor='rgba(255,255,255,0.25)'"></div>
+                                <h3 class="fs-4 fw-bold text-white mb-3 transition-colors hover-text-success">Infrastructure Engineering</h3>
+                                <p class="text-white-50 m-0">We don't just clear rubble; we redesign local infrastructure for future resilience—rebuilding roads, bridges, and power grids with sustainable materials.</p>
+                            </div>
+                            
+                            <div class="position-relative group glass-card p-4 rounded-4 hover-scale" style="cursor: pointer;">
+                                <div class="position-absolute rounded-circle bg-info opacity-25 pulse-ring transition-colors d-none d-lg-block" style="width: 32px; height: 32px; left: -43px; top: 22px;"></div>
+                                <div class="position-absolute rounded-circle border border-2 border-white border-opacity-25 transition-colors bg-modern-dark z-1 d-none d-lg-block" style="width: 16px; height: 16px; left: -35px; top: 30px;" onmouseover="this.style.backgroundColor='#0dcaf0'; this.style.borderColor='#0dcaf0'" onmouseout="this.style.backgroundColor='#131B2E'; this.style.borderColor='rgba(255,255,255,0.25)'"></div>
+                                <h3 class="fs-4 fw-bold text-white mb-3 transition-colors hover-text-info">Economic Empowerment</h3>
+                                <p class="text-white-50 m-0">Grant programs and vocational training for local artisans and entrepreneurs to restart the local economy within the first 6 months.</p>
+                            </div>
+                            
+                            <div class="position-relative group glass-card p-4 rounded-4 hover-scale" style="cursor: pointer;">
+                                <div class="position-absolute rounded-circle bg-warning opacity-25 pulse-ring transition-colors d-none d-lg-block" style="width: 32px; height: 32px; left: -43px; top: 22px;"></div>
+                                <div class="position-absolute rounded-circle border border-2 border-white border-opacity-25 transition-colors bg-modern-dark z-1 d-none d-lg-block" style="width: 16px; height: 16px; left: -35px; top: 30px;" onmouseover="this.style.backgroundColor='#ffc107'; this.style.borderColor='#ffc107'" onmouseout="this.style.backgroundColor='#131B2E'; this.style.borderColor='rgba(255,255,255,0.25)'"></div>
+                                <h3 class="fs-4 fw-bold text-white mb-3 transition-colors hover-text-warning">Sustainability Audits</h3>
+                                <p class="text-white-50 m-0">We ensure that every rebuilding project meets international climate adaptation standards, protecting the community from future threats.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Active Operations Dashboard -->
+        <section class="py-5 position-relative overflow-hidden bg-modern-dark" data-aos="fade-up">
+            <!-- Background grids/glows -->
+            <div class="position-absolute top-0 start-50 translate-middle-x w-100 h-100" style="background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.1), transparent 70%); z-index: 0;"></div>
+            
+            <div class="container py-5 position-relative z-1">
+                <div class="text-center mb-5">
+                    <span class="d-inline-block py-1 px-3 glass-card rounded-pill small fw-bold text-accent tracking-widest mb-3 border border-accent border-opacity-50">COMMAND CENTER</span>
+                    <h2 class="display-5 fw-bold text-white mb-3">Active Global Operations</h2>
+                    <p class="text-white-50 mx-auto fs-5" style="max-width: 600px;">Real-time tracking of our active deployments and field teams across the globe.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-4 rounded-4 shadow-lg border-start border-4 border-accent hover-scale position-relative overflow-hidden h-100">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), transparent);"></div>
+                            <div class="position-relative z-1">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small fw-bold text-accent text-uppercase tracking-widest">SOUTH ASIA</span>
+                                    <span class="badge bg-accent bg-opacity-25 text-accent border border-accent border-opacity-25">SEV-1</span>
+                                </div>
+                                <h4 class="fs-5 fw-bold text-white mb-3">Monsoon Flood Recovery</h4>
+                                <div class="d-flex justify-content-between text-white-50 small mb-1">
+                                    <span>Containment</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress rounded-pill bg-dark" style="height: 6px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);">
+                                    <div class="progress-bar bg-accent rounded-pill" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="glass-card p-4 rounded-4 shadow-lg border-start border-4 border-info hover-scale position-relative overflow-hidden h-100">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: linear-gradient(90deg, rgba(13, 202, 240, 0.1), transparent);"></div>
+                            <div class="position-relative z-1">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small fw-bold text-info text-uppercase tracking-widest">EAST AFRICA</span>
+                                    <span class="badge bg-info bg-opacity-25 text-info border border-info border-opacity-25">SEV-2</span>
+                                </div>
+                                <h4 class="fs-5 fw-bold text-white mb-3">Severe Drought Relief</h4>
+                                <div class="d-flex justify-content-between text-white-50 small mb-1">
+                                    <span>Resource Dist.</span>
+                                    <span>50%</span>
+                                </div>
+                                <div class="progress rounded-pill bg-dark" style="height: 6px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);">
+                                    <div class="progress-bar bg-info rounded-pill" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="glass-card p-4 rounded-4 shadow-lg border-start border-4 border-warning hover-scale position-relative overflow-hidden h-100">
+                            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), transparent);"></div>
+                            <div class="position-relative z-1">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small fw-bold text-warning text-uppercase tracking-widest">CARIBBEAN</span>
+                                    <span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25">SEV-1</span>
+                                </div>
+                                <h4 class="fs-5 fw-bold text-white mb-3">Cat 5 Hurricane Resp.</h4>
+                                <div class="d-flex justify-content-between text-white-50 small mb-1">
+                                    <span>Reconstruction</span>
+                                    <span>25%</span>
+                                </div>
+                                <div class="progress rounded-pill bg-dark" style="height: 6px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);">
+                                    <div class="progress-bar bg-warning rounded-pill" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                @keyframes pulse {
+                    0% { transform: scale(1); opacity: 1; }
+                    50% { transform: scale(1.5); opacity: 0.5; }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+            </style>
+        </section>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
