@@ -1,64 +1,120 @@
 <!-- Footer -->
-<footer class="glass-footer text-white pt-5 pb-3">
-    <div class="container py-5">
-        <div class="row g-5">
+<footer class="glass-footer position-relative pt-5 pb-0 border-top border-secondary border-opacity-25 mt-5">
+    <div class="position-absolute top-0 start-50 translate-middle-x w-100 h-100" style="background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.05), transparent 70%); z-index: 0; pointer-events: none;"></div>
+    
+    <div class="container py-4 position-relative z-1">
+        <!-- Newsletter Section -->
+        <div class="glass-card p-4 p-md-5 mb-5 rounded-4 border border-accent border-opacity-25 position-relative overflow-hidden group shadow-lg" style="box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.05);">
+            <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent 60%);"></div>
+            <div class="row align-items-center position-relative z-1">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="small fw-bold text-uppercase tracking-widest text-accent d-block mb-2"><i class="fas fa-bell me-2"></i>Action Alerts</span>
+                    <h3 class="display-6 fw-bold mb-2 text-white">Join the Frontline</h3>
+                    <p class="text-white-50 fs-5 mb-0">Stay updated on our global relief efforts and learn how you can contribute immediately.</p>
+                </div>
+                <div class="col-lg-6">
+                    <style>
+                        #newsletterInput {
+                            background-color: rgba(15, 23, 42, 0.5) !important;
+                            color: white !important;
+                        }
+                        #newsletterInput::placeholder {
+                            color: rgba(255, 255, 255, 0.6) !important;
+                            opacity: 1;
+                        }
+                        #newsletterInput:focus {
+                            background-color: rgba(15, 23, 42, 0.8) !important;
+                            border-color: var(--accent-emerald) !important;
+                            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2) !important;
+                            color: white !important;
+                        }
+                    </style>
+                    <form action="404.html" class="d-flex flex-column flex-sm-row gap-3">
+                        <div class="position-relative flex-grow-1">
+                            <i class="fas fa-envelope position-absolute top-50 start-0 translate-middle-y ms-4 text-white-50 z-2" style="pointer-events: none;"></i>
+                            <input id="newsletterInput" type="email" class="form-control form-control-lg border border-white border-opacity-25 shadow-none py-3 rounded-pill transition-all ps-5 pe-4 w-100 position-relative z-1" placeholder="     Enter your email address" aria-label="Email address" required>
+                        </div>
+                        <button type="submit" class="btn btn-glow px-4 py-3 rounded-pill fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2" style="letter-spacing: 1px; min-width: 160px;">
+                            Subscribe <span class="material-symbols-outlined fs-5">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Brand Column -->
             <div class="col-md-12 col-lg-4">
-                <!-- <div class="d-flex align-items-center gap-2 mb-4">
-                    <span class="material-symbols-outlined text-accent fs-3">emergency</span>
-                    <span class="fw-bold fs-4" style="font-family: 'Montserrat', sans-serif;">Stackly</span>
-                </div> -->
-                 <a class="d-inline-block mb-3" href="index.html">
+                 <a class="d-inline-block mb-4" href="index.html">
                     <div style="-webkit-mask: url('assets/images/logoStackly.webp') no-repeat center left; -webkit-mask-size: contain; mask: url('assets/images/logoStackly.webp') no-repeat center left; mask-size: contain; background-color: var(--accent-emerald); width: 160px; height: 40px;"
                         aria-label="Stackly Logo"></div>
                 </a>
-                <p class="text-white-50 mb-4" style="max-width: 300px;">Global Disaster Response Certified. Providing calm, authoritative aid when and where it is needed most since 1998.</p>
-                <div class="d-flex gap-3 mt-2">
-                    <a href="404.html" class="btn btn-glass rounded-circle d-inline-flex align-items-center justify-content-center text-white-50 hover-text-white border border-white border-opacity-25 hover-border-accent hover-glow transition-all hover-scale" style="width: 45px; height: 45px;" aria-label="Facebook">
-                        <i class="fab fa-facebook-f fs-5"></i>
+                <p class="text-white-50 mb-4 lh-base small">Global Disaster Response Certified. Providing calm, authoritative aid when and where it is needed most since 1998.</p>
+                <div class="d-flex gap-2">
+                    <a href="404.html" class="btn btn-glass rounded-circle d-flex align-items-center justify-content-center text-white-50 hover-text-white transition-all hover-scale shadow-sm p-0" style="width: 40px; height: 40px;" aria-label="Facebook">
+                        <i class="fab fa-facebook-f fs-6"></i>
                     </a>
-                    <a href="404.html" class="btn btn-glass rounded-circle d-inline-flex align-items-center justify-content-center text-white-50 hover-text-white border border-white border-opacity-25 hover-border-accent hover-glow transition-all hover-scale" style="width: 45px; height: 45px;" aria-label="Instagram">
-                        <i class="fab fa-instagram fs-5"></i>
+                    <a href="404.html" class="btn btn-glass rounded-circle d-flex align-items-center justify-content-center text-white-50 hover-text-white transition-all hover-scale shadow-sm p-0" style="width: 40px; height: 40px;" aria-label="Instagram">
+                        <i class="fab fa-instagram fs-6"></i>
                     </a>
-                    <a href="404.html" class="btn btn-glass rounded-circle d-inline-flex align-items-center justify-content-center text-white-50 hover-text-white border border-white border-opacity-25 hover-border-accent hover-glow transition-all hover-scale" style="width: 45px; height: 45px;" aria-label="X (Twitter)">
-                        <i class="fa-brands fa-x-twitter fs-5"></i>
+                    <a href="404.html" class="btn btn-glass rounded-circle d-flex align-items-center justify-content-center text-white-50 hover-text-white transition-all hover-scale shadow-sm p-0" style="width: 40px; height: 40px;" aria-label="X (Twitter)">
+                        <i class="fa-brands fa-x-twitter fs-6"></i>
                     </a>
-                    <a href="404.html" class="btn btn-glass rounded-circle d-inline-flex align-items-center justify-content-center text-white-50 hover-text-white border border-white border-opacity-25 hover-border-accent hover-glow transition-all hover-scale" style="width: 45px; height: 45px;" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in fs-5"></i>
+                    <a href="404.html" class="btn btn-glass rounded-circle d-flex align-items-center justify-content-center text-white-50 hover-text-white transition-all hover-scale shadow-sm p-0" style="width: 40px; height: 40px;" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in fs-6"></i>
                     </a>
                 </div>
             </div>
             
-            <div class="col-md-6 col-lg-2">
-                <h5 class="text-accent-secondary fw-bold mb-4 small" style="letter-spacing: 1px;">ORGANIZATION</h5>
+            <!-- Quick Links -->
+            <div class="col-6 col-md-6 col-lg-2">
+                <h5 class="text-accent-secondary fw-bold mb-4 tracking-widest small text-uppercase">Quick Links</h5>
                 <ul class="list-unstyled space-y-3">
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">About Us</a></li>
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">Our Strategy</a></li>
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">Careers</a></li>
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">Impact Report</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 group-hover-text-accent small" href="index.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>Home</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 group-hover-text-accent small" href="about.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>About</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 group-hover-text-accent small" href="services.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>Services</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 group-hover-text-accent small" href="resources.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>Resources</a></li>
                 </ul>
             </div>
             
-            <div class="col-md-6 col-lg-2">
-                <h5 class="text-accent-secondary fw-bold mb-4 small" style="letter-spacing: 1px;">GOVERNANCE</h5>
+            <!-- Organization -->
+            <div class="col-6 col-md-6 col-lg-2">
+                <h5 class="text-accent-secondary fw-bold mb-4 tracking-widest small text-uppercase">Organization</h5>
                 <ul class="list-unstyled space-y-3">
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">Financial Transparency</a></li>
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">Privacy Policy</a></li>
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">Annual Report</a></li>
-                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-all" href="404.html">Media Kit</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 small" href="blog.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>Blog</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 small" href="contact.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>Contact</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 small" href="404.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>Volunteer</a></li>
+                    <li class="mb-3"><a class="text-white-50 text-decoration-none hover-text-white transition-colors d-flex align-items-center gap-2 small" href="404.html" onmouseover="this.style.color='var(--accent-emerald)'; this.firstElementChild.style.opacity='1'" onmouseout="this.style.color=''; this.firstElementChild.style.opacity='0.5'"><span class="material-symbols-outlined fs-6 opacity-50 transition-all text-accent">chevron_right</span>Our Impact</a></li>
                 </ul>
             </div>
             
-            <div class="col-md-12 col-lg-4">
-                <h5 class="text-danger fw-bold mb-4 small text-uppercase" style="letter-spacing: 1px;">Emergency Protocol</h5>
-                <div class="glass-card p-4 rounded-3">
-                    <p class="text-white-50 fst-italic mb-4">"Rapid mobilization is the key to minimizing human suffering."</p>
-                    <a class="btn btn-outline-danger w-100 fw-bold mb-3 text-uppercase hover-scale" style="letter-spacing: 1px;" href="404.html">REPORT A CRISIS</a>
-                    <p class="small text-white-50 mb-0">24/7 Response Monitoring Active</p>
+            <!-- Emergency Protocol -->
+            <div class="col-md-12 col-lg-4 mt-5 mt-lg-0">
+                <h5 class="text-danger fw-bold mb-4 tracking-widest small text-uppercase d-flex align-items-center gap-2"><span class="material-symbols-outlined fs-5 pulse-ring rounded-circle bg-danger text-white">warning</span> Protocol</h5>
+                <div class="glass-card p-4 rounded-4 border border-danger border-opacity-25 position-relative overflow-hidden group" style="background: rgba(220, 53, 69, 0.03);">
+                    <div class="position-absolute w-100 h-100 top-0 start-0 z-0" style="background: radial-gradient(circle at top right, rgba(220, 53, 69, 0.1), transparent 60%);"></div>
+                    <div class="position-relative z-1">
+                        <p class="text-white-50 fst-italic mb-3 lh-base small">"Rapid mobilization minimizes suffering."</p>
+                        <a class="btn btn-outline-danger w-100 fw-bold mb-3 py-2 text-uppercase hover-scale d-flex align-items-center justify-content-center gap-2 small" style="letter-spacing: 1px;" href="404.html">
+                            <span class="material-symbols-outlined fs-6">campaign</span> Report a Crisis
+                        </a>
+                        <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-danger bg-opacity-10 border border-danger border-opacity-25">
+                            <span class="small fw-bold text-danger d-flex align-items-center gap-1" style="font-size: 0.75rem;"><span class="rounded-circle bg-danger" style="width:6px;height:6px;"></span> 24/7 Response Active</span>
+                            <span class="badge bg-danger text-white p-1" style="font-size: 0.7rem;">LIVE</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="py-4 text-center mt-4" style="background-color: rgba(0,0,0,0.3);">
-        <p class="small text-white-50 mb-0">© 2024 Stackly. Global Disaster Response Certified. All rights reserved.</p>
+    
+    <div class="py-4 text-center mt-5 position-relative z-1 bg-modern-dark border-top border-white border-opacity-10 w-100">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <p class="small text-white-50 mb-0">© 2024 Stackly. Global Disaster Response Certified.</p>
+            <div class="d-flex gap-4 small">
+                <a href="404.html" class="text-white-50 text-decoration-none hover-text-white transition-all">Privacy Policy</a>
+                <a href="404.html" class="text-white-50 text-decoration-none hover-text-white transition-all">Terms of Service</a>
+            </div>
+        </div>
     </div>
 </footer>
